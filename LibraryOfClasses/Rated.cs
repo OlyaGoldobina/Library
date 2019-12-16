@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class Rated
+    public class Rated
     {
         public Viewer Viewer { get; set; }
         public Film Film { get; set; }

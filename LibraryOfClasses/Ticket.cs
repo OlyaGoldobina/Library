@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class Ticket
+    public class Ticket
     {
         public int ID { get; set; }
         public DateTime TimeOfBuying { get; set; }

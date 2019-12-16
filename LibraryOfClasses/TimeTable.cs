@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class TimeTable
+    public class TimeTable
     {
         public DateTime DateTime { get; set; }
         public Film Film { get; set; }

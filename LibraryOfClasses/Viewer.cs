@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class Viewer : Entity
+    public class Viewer : Entity
     {
         public string Name { get; set; }
         public int ID { get; set; }
