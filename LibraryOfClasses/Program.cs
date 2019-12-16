@@ -10,6 +10,14 @@ namespace LibraryOfClasses
     {
         static void Main(string[] args)
         {
+            Repository repo = new Repository();
+            repo.Cinema.Halls.Add(new Hall()
+            {
+                ID = 1000,
+                Name = "HALLOFPOWER",
+                Cost = 100
+            });
+            repo.Cinema.SaveChanges();
         }
     }
 }
