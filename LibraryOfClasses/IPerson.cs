@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    interface IPerson
+    public interface IPerson
     {
-       int Name { get; set; }
+          int Name { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class Person 
+    class Person : IPerson
     {
         public int Name { get; set; }
         
