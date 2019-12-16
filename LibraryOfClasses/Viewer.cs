@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    public interface IPerson
+    class Viewer : Entity
     {
-          int Name { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class Person : IPerson
+    public interface IEntity
     {
-        public int Name { get; set; }
-        
+          string Name { get; set; }
+         int ID { get; set; }
     }
 }
