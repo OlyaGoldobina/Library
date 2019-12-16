@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFInterface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="LogIn" Height="450" Width="800" Icon="favion.ico" Background="Gold">
+    <Grid x:Name="OpenWindow" Background="DarkOrange">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="267*"/>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="133*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,22" Grid.ColumnSpan="3">
+            <Run FontFamily="Calibri" FontSize="50" Foreground="Snow">Owner's cinema App</Run>
+        </TextBlock>
+        <TextBlock Name="ErrorBlock" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Left" Margin="5,0,5,0" FontFamily="Calibri"  FontSize="25" Foreground="LightCoral">
+        </TextBlock>
+        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
+            Login
+        </Label>
+        <TextBox Grid.Column ="2" MinHeight="30" Grid.Row="2" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontFamily="Calibri"
+                     Margin="3,3,3,3" Padding="3" Name="EnterLogin"/>
+        <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
+            Password
+        </Label>
+        <PasswordBox Name="EnterPassword" Grid.Column ="2" MinHeight="30" Grid.Row="3" Grid.ColumnSpan="2"
+                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri"/>
+        <Button Name="EnterTheApp" Grid.Column="3" Grid.Row="5" Background="Gold" Click="EnterTheApp_Click" BorderThickness="0">
+            <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
+            </Button>
+            <Button Name="ForgetPas" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Background="DarkOrange" BorderThickness="0" Click="ForgetPas_Click">
+            <Run FontSize="25" Foreground="Snow" FontFamily="Calibri" TextDecorations="Underline">Forget password?</Run>
+        </Button>
     </Grid>
 </Window>

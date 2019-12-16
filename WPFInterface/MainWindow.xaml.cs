@@ -24,5 +24,15 @@ namespace WPFInterface
         {
             InitializeComponent();
         }
+
+        private void ForgetPas_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EnterTheApp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
