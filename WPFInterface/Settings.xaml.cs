@@ -23,5 +23,10 @@ namespace WPFInterface
         {
             InitializeComponent();
         }
+
+        private void ChangeThePassword_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

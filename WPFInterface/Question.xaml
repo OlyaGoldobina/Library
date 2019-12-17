@@ -32,7 +32,7 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Foreground="Snow" FontSize="30" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
             Answer the question:
         </TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Foreground="Snow" FontSize="30" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
+        <TextBlock Name="NewQuestion" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Foreground="Snow" FontSize="30" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
             What is the nickname of your first dog?
         </TextBlock>
         <TextBox Name="TheAnswer" Grid.Column ="1" MinHeight="30" Grid.Row="4" Grid.ColumnSpan="3"
