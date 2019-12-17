@@ -12,6 +12,6 @@ namespace LibraryOfClasses
         void UpdateItem(T item);
         void AddItem(T item);
         void RemoveItem(T item);
-        event Action<T> ItemAdded;
+       
     }
 }
