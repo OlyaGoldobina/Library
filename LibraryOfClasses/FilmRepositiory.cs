@@ -43,12 +43,16 @@ namespace LibraryOfClasses
 
         public void UpdateItem(Film previous, Film updated)
         {
+
             updated.FilmID = previous.FilmID;
-            //previous.Name = updated.Name;
-            //previous.Start = updated.Start;
-            //previous.Finish = updated.Finish;
-            //previous.CostOfMovieRental = 
-            Cinema.Films.Remove(previous);
+            foreach (Film film in Cinema.Films)
+            {
+                if (film.FilmID == previous.FilmID)
+                {
+                    Cinema.Films.Remove(film);
+                    break;
+                }
+            }
             Cinema.Films.Add(updated);
             Cinema.SaveChanges();
         }
