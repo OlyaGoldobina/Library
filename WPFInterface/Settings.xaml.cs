@@ -28,5 +28,15 @@ namespace WPFInterface
         {
 
         }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChangeQuestionButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
