@@ -80,6 +80,7 @@
     <Compile Include="Hall.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="OurCinema.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
