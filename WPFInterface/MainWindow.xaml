@@ -39,7 +39,7 @@
         </Label>
         <PasswordBox Name="EnterPassword" Grid.Column ="2" MinHeight="30" Grid.Row="3" Grid.ColumnSpan="2"
                      Margin="3,3,3,3" Padding="3" FontFamily="Calibri"/>
-        <Button Name="EnterTheApp" Grid.Column="3" Grid.Row="5" Background="Gold" Click="EnterTheApp_Click" BorderThickness="0">
+        <Button Name="EnterTheApp" Grid.Column="3" Grid.Row="5" Background="Gold" Click="EnterTheApp_Click"  BorderThickness="0">
             <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
         </Button>
         <Button Name="ForgetPas" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Background="DarkOrange" BorderThickness="0" Click="ForgetPas_Click">
@@ -47,3 +47,4 @@
         </Button>
     </Grid>
 </Window>
+
