@@ -15,8 +15,9 @@ namespace LibraryOfClasses
                 // Create and save a new Blog
                 Console.Write("Enter a name for a new Hall: ");
                 var name = Console.ReadLine();
-
-                var hall = new Hall { HallName = name, Cost = 100, HallID = 104 };
+                Console.Write("\n Enter an id for a new Hall: ");
+                var id = int.Parse(Console.ReadLine());
+                var hall = new Hall { HallName = name, Cost = 100, HallID = id };
                 db.Halls.Add(hall);
                 db.SaveChanges();
 
