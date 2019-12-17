@@ -16,7 +16,7 @@ namespace LibraryOfClasses
                 Console.Write("Enter a name for a new Hall: ");
                 var name = Console.ReadLine();
                 Console.Write("\n Enter an id for a new Hall: ");
-                var id = Console.ReadLine();
+                var id = int.Parse(Console.ReadLine());
                 var hall = new Hall { HallName = name, Cost = 100, HallID = id };
                 db.Halls.Add(hall);
                 db.SaveChanges();
