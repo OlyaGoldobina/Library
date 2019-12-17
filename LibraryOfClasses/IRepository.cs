@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    public interface IRepository<T>
+    public interface IRepository<T> 
     {   
-        void UpdateItem(T item);
+        void UpdateItem(T item, T item1);
         void AddItem(T item);
         void RemoveItem(T item);
-       
+        DbSet SelectItem();
     }
 }

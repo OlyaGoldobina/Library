@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class Factory
+    public class Factory
     {
         private Factory()
         {
@@ -20,5 +20,8 @@ namespace LibraryOfClasses
                 return _instance ?? (_instance = new Factory());
             }
         }
+
+        OurCinema ourCinema = new OurCinema();
+        public OurCinema GetOurCinema() => ourCinema;
     }
 }

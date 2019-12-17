@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,10 @@ namespace LibraryOfClasses
     {
         public List<Film> Films { get; set;} = new List<Film>();
 
+        OurCinema Cinema =  Factory.Instance.GetOurCinema();
+
+
+
         public FilmRepositiory()
         {
 
@@ -17,17 +22,41 @@ namespace LibraryOfClasses
 
         public void AddItem(Film item)
         {
-            throw new NotImplementedException();
+            item.FilmID = Cinema.Films.Count() + 1;
+            Cinema.Films.Add(item);
+            Cinema.SaveChanges();
         }
 
         public void RemoveItem(Film item)
         {
-            throw new NotImplementedException();
+            foreach (Film film in Cinema.Films)
+            {
+                if (film.FilmID == item.FilmID)
+                {
+                    Cinema.Films.Remove(film);
+                    break;
+                }
+            }
+          
+            Cinema.SaveChanges();
         }
 
-        public void UpdateItem(Film item)
+        public void UpdateItem(Film previous, Film updated)
         {
-            throw new NotImplementedException();
+            updated.FilmID = previous.FilmID;
+            //previous.Name = updated.Name;
+            //previous.Start = updated.Start;
+            //previous.Finish = updated.Finish;
+            //previous.CostOfMovieRental = 
+            Cinema.Films.Remove(previous);
+            Cinema.Films.Add(updated);
+            Cinema.SaveChanges();
+        }
+
+        public DbSet SelectItem()
+        {
+            DbSet dbSet = Cinema.Films;
+            return dbSet;
         }
     }
 }
