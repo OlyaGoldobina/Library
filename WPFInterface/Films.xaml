@@ -29,7 +29,7 @@
             <Run FontFamily="Calibri" FontSize="35" Foreground="DeepSkyBlue">Films information:</Run>
                 </TextBlock>
                 <ScrollViewer CanContentScroll="True" Height="250">
-                    <ListBox Name="Past" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
+                    <ListBox Name="Film" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>

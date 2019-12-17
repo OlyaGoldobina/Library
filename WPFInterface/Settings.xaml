@@ -5,8 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFInterface"
         mc:Ignorable="d"
-        Title="Settings" Height="450" Width="800">
-    <Grid>
-        
+        Title="Settings" Height="450" Width="800" Icon="favion.ico" Background="Gold">
+    <Grid x:Name="Setings" Background="DarkOrange">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="267*"/>
+            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition Width="133*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,22" Grid.ColumnSpan="3">
+            <Run FontFamily="Calibri" FontSize="50" Foreground="Snow">Owner's cinema App</Run>
+        </TextBlock>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Left" Margin="5,0,5,0" FontFamily="Calibri"  FontSize="30" Foreground="Snow">
+            Change password:
+        </TextBlock>
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
+            Enter new password
+        </Label>
+        <TextBox Grid.Column ="2" MinHeight="30" Grid.Row="2" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontFamily="Calibri"
+                     Margin="3,3,3,3" Padding="3" Name="EnterNewPassword"/>
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
+            Enter again
+        </Label>
+        <TextBox Name="RepeatNewPassword" Grid.Column ="2" MinHeight="30" Grid.Row="3" Grid.ColumnSpan="2"
+                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri"/>
+        <Button Name="ChangeThePassword" Grid.Column="3" Grid.Row="4" Background="Gold" Click="ChangeThePassword_Click"  BorderThickness="0">
+            <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
+        </Button>
+        <TextBlock Grid.Row="5" Grid.ColumnSpan="5" HorizontalAlignment="Left" Margin="5,0,5,0" FontFamily="Calibri"  FontSize="30" Foreground="Snow">
+            Change question:
+        </TextBlock>
+        <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
+            Choose
+        </Label>
+        <ComboBox Grid.Column ="2" MinHeight="30" Grid.Row="6" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontFamily="Calibri"
+                     Margin="3,3,3,3" Padding="3" Name="ChangeQuestion" Background="Snow" FontSize="25">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBox Name="Questions" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Text}" Margin="5,0,5,0"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri" Grid.RowSpan="3">
+            Answer
+        </Label>
+        <TextBox Grid.Column ="2" MinHeight="30" Grid.Row="7" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontFamily="Calibri"
+                     Margin="3,3,3,3" Padding="3" Name="Answer"/>
+        <Button Name="ChangeQuestionButton" Grid.Column="3" Grid.Row="8" Background="Gold" Click="ChangeQuestionButton_Click"  BorderThickness="0">
+            <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
+        </Button>
+        <Button Name="Logout" Grid.Column="4" Background="Tomato" Click="Logout_Click"  BorderThickness="0" Margin="10,20">
+            <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Logout</Run>
+        </Button>
     </Grid>
 </Window>
