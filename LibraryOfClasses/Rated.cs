@@ -1,23 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace LibraryOfClasses
 {
-    public class Rated
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("Rated")]
+    public partial class Rated
     {
-        public int Mark { get; set; }
+        [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ViewerID { get; set; }
 
         [Key]
-        public int ViewerID { get; set; }
+        [Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int FilmID { get; set; }
-        [ForeignKey("FilmID")]
-        public Film Film { get; set; }
-        [ForeignKey("ViewerID")]
-        public Viewer Viewer { get; set; }
+
+        public int Mark { get; set; }
+
+        public virtual Film Film { get; set; }
+
+        public virtual Viewer Viewer { get; set; }
     }
 }

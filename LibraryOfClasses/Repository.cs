@@ -11,8 +11,8 @@ namespace LibraryOfClasses
     class Repository
     {
 
-        public OurCinema Cinema { get; set; } 
-
+        private OurCinema Cinema { get; set; } 
+        
         public Repository()
         {
             OurCinema Cinema = new OurCinema();

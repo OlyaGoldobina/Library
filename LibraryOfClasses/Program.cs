@@ -10,14 +10,30 @@ namespace LibraryOfClasses
     {
         static void Main(string[] args)
         {
-            Repository repo = new Repository();
-            repo.Cinema.Halls.Add(new Hall()
+            using (var db = new OurCinema())
             {
-                ID = 1000,
-                Name = "HALLOFPOWER",
-                Cost = 100
-            });
-            repo.Cinema.SaveChanges();
+                // Create and save a new Blog
+                Console.Write("Enter a name for a new Hall: ");
+                var name = Console.ReadLine();
+
+                var hall = new Hall { HallName = name, Cost = 100, HallID = 100 };
+                db.Halls.Add(hall);
+                db.SaveChanges();
+
+                // Display all Blogs from the database
+                var query = from b in db.Halls
+                            orderby b.HallName
+                            select b;
+
+                Console.WriteLine("All blogs in the database:");
+                foreach (var item in query)
+                {
+                    Console.WriteLine(item.HallName);
+                }
+
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
+            }
         }
     }
 }
