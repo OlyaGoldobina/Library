@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LibraryOfClasses;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace WPFInterface
 {
     /// <summary>
@@ -19,9 +22,17 @@ namespace WPFInterface
     /// </summary>
     public partial class Worker : Window
     {
+        WorkerRepository _repo = new WorkerRepository();
         public Worker()
         {
             InitializeComponent();
+        }
+
+        private void UpdateSessions()
+        {
+//            List<Worker> thisses = _repo.SelectItem();
+//            FilmItems.ItemsSource = null;
+//            FilmItems.ItemsSource = thisses;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
