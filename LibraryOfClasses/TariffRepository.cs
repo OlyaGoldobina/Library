@@ -12,48 +12,70 @@ namespace LibraryOfClasses
 
         OurCinema Cinema = Factory.Instance.GetOurCinema();
 
-
-
         public TariffRepositiory()
         {
 
         }
 
-        public void AddItem(Tariff item)
+        public bool AddItem(Tariff item)
         {
-            item.TariffID = Cinema.Tariffs.Count() + 1;
-            Cinema.Tariffs.Add(item);
-            Cinema.SaveChanges();
+            try
+            {
+                item.TariffID = Cinema.Tariffs.Count() + 1;
+                Cinema.Tariffs.Add(item);
+                Cinema.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public void RemoveItem(Tariff item)
+        public bool RemoveItem(Tariff item)
         {
-            foreach (Tariff tariff in Cinema.Tariffs)
+            try
             {
-                if (tariff.TariffID == item.TariffID)
+                foreach (Tariff tariff in Cinema.Tariffs)
                 {
-                    Cinema.Tariffs.Remove(tariff);
-                    break;
+                    if (tariff.TariffID == item.TariffID)
+                    {
+                        Cinema.Tariffs.Remove(tariff);
+                        Cinema.SaveChanges();
+                        return true;
+                    }
                 }
+                return false;
+            }
+            catch
+            {
+                return false;
             }
 
-            Cinema.SaveChanges();
         }
 
-        public void UpdateItem(Tariff previous, Tariff updated)
+        public bool UpdateItem(Tariff previous, Tariff updated)
         {
-            int id = previous.TariffID;
-            updated.TariffID = id;
-            foreach (Tariff tariff in Cinema.Tariffs)
+            try
             {
-                if (tariff.TariffID == previous.TariffID)
+                int id = previous.TariffID;
+                updated.TariffID = id;
+                foreach (Tariff tariff in Cinema.Tariffs)
                 {
-                    Cinema.Tariffs.Remove(tariff);
-                    break;
+                    if (tariff.TariffID == previous.TariffID)
+                    {
+                        Cinema.Tariffs.Remove(tariff);
+                        Cinema.Tariffs.Add(updated);
+                        Cinema.SaveChanges();
+                        return true;
+                    }
                 }
+                return false;
             }
-            Cinema.Tariffs.Add(updated);
-            Cinema.SaveChanges();
+            catch
+            {
+                return false;
+            }
         }
 
         public DbSet SelectItem()
