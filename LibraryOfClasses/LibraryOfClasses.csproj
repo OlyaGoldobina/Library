@@ -94,10 +94,12 @@
     <Compile Include="Rated.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Tariff.cs" />
+    <Compile Include="TariffRepository.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="TimeTable.cs" />
     <Compile Include="Viewer.cs" />
     <Compile Include="Worker.cs" />
+    <Compile Include="WorkerRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

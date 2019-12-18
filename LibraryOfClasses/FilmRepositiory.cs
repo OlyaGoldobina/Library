@@ -43,8 +43,8 @@ namespace LibraryOfClasses
 
         public void UpdateItem(Film previous, Film updated)
         {
-
-            updated.FilmID = previous.FilmID;
+            int id = previous.FilmID;
+            updated.FilmID = id;
             foreach (Film film in Cinema.Films)
             {
                 if (film.FilmID == previous.FilmID)
