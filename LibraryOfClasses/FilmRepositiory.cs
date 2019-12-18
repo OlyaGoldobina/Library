@@ -82,9 +82,11 @@ namespace LibraryOfClasses
                         film.Start = updated.Start;
                         film.Name = updated.Name;
                         film.Rating = updated.Rating;
-                        return true;
+                        
 
                     }
+                    Cinema.SaveChanges();
+                    return true;
                 }
 
             }
