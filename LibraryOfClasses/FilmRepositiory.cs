@@ -36,6 +36,7 @@ namespace LibraryOfClasses
 
         public bool RemoveItem(Film item)
         {
+            bool indicator = false;
             try
             {
                 foreach (Film film in Cinema.Films)
@@ -43,18 +44,17 @@ namespace LibraryOfClasses
                     if (film.FilmID == item.FilmID)
                     {
                         Cinema.Films.Remove(film);
-                        Cinema.SaveChanges();
-                        return true;
                     }
                 }
-
+                Cinema.SaveChanges();
+                indicator = true;
+                return indicator;
             }
-            catch (Exception)
+            catch
             {
 
-                return false;
+                return indicator;
             }
-            return false;
         }
 
         public bool UpdateItem(Film previous, Film updated)
@@ -77,14 +77,13 @@ namespace LibraryOfClasses
 
                     }
                 }
+                return false;
 
             }
             catch
             {
-
                 return false;
             }
-            return false;
             
         }
 

@@ -60,7 +60,7 @@ namespace WPFInterface
                 }
                     else
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("There is information about this film in other tables");
                 }
             }
         }

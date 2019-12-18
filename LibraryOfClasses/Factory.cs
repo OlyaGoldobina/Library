@@ -21,6 +21,10 @@ namespace LibraryOfClasses
             }
         }
 
+        public void Save()
+        {
+            ourCinema.SaveChanges();
+        }
         OurCinema ourCinema = new OurCinema();
         public OurCinema GetOurCinema() => ourCinema;
     }
