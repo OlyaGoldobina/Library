@@ -51,18 +51,19 @@ namespace LibraryOfClasses
                     if (film.FilmID == item.FilmID)
                     {
                         Cinema.Films.Remove(film);
-                        Cinema.SaveChanges();
-                        return true;
+                      
+                        
                     }
                 }
-
+                Cinema.SaveChanges();
+                return true;
             }
             catch (Exception)
             {
 
                 return false;
-            }
-            return false;
+           }
+            
         }
 
         public bool UpdateItem(Film previous, Film updated)

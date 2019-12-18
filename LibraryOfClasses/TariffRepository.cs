@@ -49,11 +49,11 @@ namespace LibraryOfClasses
                     if (tariff.TariffID == item.TariffID)
                     {
                         Cinema.Tariffs.Remove(tariff);
-                        Cinema.SaveChanges();
-                        return true;
+                        
                     }
                 }
-                return false;
+                Cinema.SaveChanges();
+                return true;
             }
             catch
             {

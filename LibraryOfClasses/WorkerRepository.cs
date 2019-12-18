@@ -50,11 +50,11 @@ namespace LibraryOfClasses
                     if (worker.WorkerID == item.WorkerID)
                     {
                         Cinema.Workers.Remove(worker);
-                        Cinema.SaveChanges();
-                        return true;
+                        
                     }
                 }
-                return false;
+                Cinema.SaveChanges();
+                return true;
             }
             catch
             {
