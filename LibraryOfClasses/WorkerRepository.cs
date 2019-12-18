@@ -78,10 +78,13 @@ namespace LibraryOfClasses
             }
         }
 
-        public DbSet SelectItem()
+        public List<Worker> SelectItem()
         {
-            DbSet dbSet = Cinema.Tariffs;
-            return dbSet;
+            List<Worker> workers = new List<Worker>();
+            DbSet<Worker> dbSet = Cinema.Workers;
+            foreach (Worker item in dbSet)
+                workers.Add(item);
+            return workers;
         }
     }
 }

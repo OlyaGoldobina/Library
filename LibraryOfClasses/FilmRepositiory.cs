@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class FilmRepositiory : IRepository<Film>
+    public class FilmRepositiory : IRepository<Film>
     {
 
         OurCinema Cinema =  Factory.Instance.GetOurCinema();
-
-
 
         public FilmRepositiory()
         {
@@ -87,10 +85,13 @@ namespace LibraryOfClasses
             
         }
 
-        public DbSet SelectItem()
+        public List<Film> SelectItem()
         {
-            DbSet dbSet = Cinema.Films;
-            return dbSet;
+            List<Film> films = new List<Film>();
+            DbSet<Film> dbSet = Cinema.Films;
+            foreach (Film item in dbSet)
+                films.Add(item);
+            return films;
         }
     }
 }

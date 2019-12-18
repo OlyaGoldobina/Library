@@ -52,10 +52,13 @@ namespace LibraryOfClasses
             Cinema.SaveChanges();
         }
 
-        public DbSet SelectItem()
+        public List<TimeTable> SelectItem()
         {
-            DbSet dbSet = Cinema.Films;
-            return dbSet;
+            List<TimeTable> timetable = new List<TimeTable>();
+            DbSet<TimeTable> dbSet = Cinema.TimeTables;
+            foreach (TimeTable item in dbSet)
+                timetable.Add(item);
+            return timetable;
         }
     }
 }

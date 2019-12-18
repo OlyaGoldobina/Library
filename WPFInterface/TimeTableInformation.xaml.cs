@@ -23,5 +23,17 @@ namespace WPFInterface
         {
             InitializeComponent();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            TimeTable tablewindow = new TimeTable();
+            tablewindow.Show();
+            this.Close();
+        }
+
+        private void ChangeFilmInformation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

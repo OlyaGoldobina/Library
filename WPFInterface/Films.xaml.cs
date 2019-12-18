@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LibraryOfClasses;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,18 @@ namespace WPFInterface
     /// </summary>
     public partial class Films : Window
     {
+        FilmRepositiory _repo = new FilmRepositiory();
         public Films()
         {
             InitializeComponent();
+            UpdateSessions();
+        }
+
+        private void UpdateSessions()
+        {
+            List<Film> thisses = _repo.SelectItem();
+            Film.ItemsSource = null;
+            Film.ItemsSource = thisses;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
