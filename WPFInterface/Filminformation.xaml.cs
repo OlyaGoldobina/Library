@@ -108,7 +108,7 @@ namespace WPFInterface
                                     _repo.UpdateItem(Filming,films);
                                     Films filmswindow = new Films();
                                     filmswindow.Show();
-                                    MessageBox.Show("The film was added");
+                                    MessageBox.Show("The film was changed");
                                     this.Close();
                                 }
                                 else
