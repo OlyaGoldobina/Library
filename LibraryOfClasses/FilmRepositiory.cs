@@ -63,15 +63,18 @@ namespace LibraryOfClasses
         {
             try
             {
-                int id = previous.FilmID;
-                updated.FilmID = id;
                 foreach (Film film in Cinema.Films)
                 {
                     if (film.FilmID == previous.FilmID)
                     {
-                        Cinema.Films.Remove(film);
-                        Cinema.Films.Add(updated);
-                        Cinema.SaveChanges();
+                        //Cinema.Films.Remove(film);
+                        //Cinema.Films.Add(updated);
+                        //Cinema.SaveChanges();
+                        film.CostOfMovieRental = updated.CostOfMovieRental;
+                        film.Finish = updated.Finish;
+                        film.Start = updated.Start;
+                        film.Name = updated.Name;
+                        film.Rating = updated.Rating;
                         return true;
 
                     }

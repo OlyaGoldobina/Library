@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class TimeTableRepository
+    public class TimeTableRepository : IRepository<TimeTable>
     {
         OurCinema Cinema = Factory.Instance.GetOurCinema();
         public TimeTableRepository()
@@ -15,41 +15,77 @@ namespace LibraryOfClasses
 
         }
 
-        public void AddItem(Film item)
+        public bool AddItem(TimeTable item)
         {
-            item.FilmID = Cinema.Films.Count() + 1;
-            Cinema.Films.Add(item);
-            Cinema.SaveChanges();
-        }
-
-        public void RemoveItem(Film item)
-        {
-            foreach (Film film in Cinema.Films)
+            try
             {
-                if (film.FilmID == item.FilmID)
-                {
-                    Cinema.Films.Remove(film);
-                    break;
-                }
+                Cinema.TimeTables.Add(item);
+                Cinema.SaveChanges();
+                return true;
+
+            }
+            catch 
+            {
+                return false;
+              
             }
 
-            Cinema.SaveChanges();
         }
 
-        public void UpdateItem(Film previous, Film updated)
+        public bool RemoveItem(TimeTable item)
         {
-            int id = previous.FilmID;
-            updated.FilmID = id;
-            foreach (Film film in Cinema.Films)
+            try
             {
-                if (film.FilmID == previous.FilmID)
-                {
-                    Cinema.Films.Remove(film);
-                    break;
-                }
+                Cinema.TimeTables.Remove(item);
+                Cinema.SaveChanges();
+                return false;
             }
-            Cinema.Films.Add(updated);
-            Cinema.SaveChanges();
+            catch
+            {
+                return false;
+            }
+
+
+
+        }
+
+        public bool UpdateItem(TimeTable previous, TimeTable updated)
+        {
+            try
+            {
+                foreach (TimeTable timeTable in Cinema.TimeTables)
+                {
+                    if ((timeTable.FilmID == previous.FilmID) && (timeTable.HallID == previous.HallID) && (timeTable.Datetime == previous.Datetime))
+                    {
+                        Cinema.Films.Find(previous.FilmID).TimeTables.Remove(previous);
+                        Cinema.Halls.Find(previous.HallID).TimeTables.Remove(previous);
+                        Cinema.Workers.Find(previous.WorkerID).TimeTables.Remove(previous);
+                        timeTable.Datetime = updated.Datetime;
+                        timeTable.Film = Cinema.Films.Find(updated.FilmID);
+
+                        timeTable.FilmID = updated.FilmID;
+                        timeTable.Hall = Cinema.Halls.Find(updated.HallID);
+                        timeTable.HallID = updated.HallID;
+                        timeTable.Worker = Cinema.Workers.Find(updated.WorkerID);
+                        timeTable.WorkerID = updated.WorkerID;
+
+                        Cinema.Films.Find(updated.FilmID).TimeTables.Add(previous);
+
+                        Cinema.Halls.Find(updated.HallID).TimeTables.Add(previous);
+
+                        Cinema.Workers.Find(updated.WorkerID).TimeTables.Add(previous);
+                        Cinema.SaveChanges();
+                        return true;
+                    }
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+            return false;
+
         }
 
         public DbSet SelectItem()
