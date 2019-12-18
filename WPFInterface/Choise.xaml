@@ -28,7 +28,7 @@
                 <ListBox Name="Options" HorizontalAlignment="Left" FontSize="25" Foreground="DarkSlateGray" FontFamily="Calibri" 
                  Background="Snow" BorderThickness="0">
                     <ListBoxItem>
-                        <TextBlock>Timetable</TextBlock>
+                        <TextBlock>TimeTable</TextBlock>
                     </ListBoxItem>
                     <ListBoxItem>
                         <TextBlock>Workers</TextBlock>
@@ -43,7 +43,7 @@
                         <TextBlock>Profit information</TextBlock>
                     </ListBoxItem>
                     <ListBoxItem>
-                        <TextBlock>Settings</TextBlock>
+                        <TextBlock Name="Block" Text="Settings"></TextBlock>
                     </ListBoxItem>
                 </ListBox>
             </StackPanel>
