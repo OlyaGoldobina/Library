@@ -19,41 +19,72 @@ namespace LibraryOfClasses
 
         }
 
-        public void AddItem(Film item)
+        public bool AddItem(Film item)
         {
-            item.FilmID = Cinema.Films.Count() + 1;
-            Cinema.Films.Add(item);
-            Cinema.SaveChanges();
+            try
+            {
+                item.FilmID = Cinema.Films.Count() + 1;
+                Cinema.Films.Add(item);
+                Cinema.SaveChanges();
+                return true;
+            }
+            catch 
+            {
+
+                return false;
+            }
+
         }
 
-        public void RemoveItem(Film item)
+        public bool RemoveItem(Film item)
         {
-            foreach (Film film in Cinema.Films)
+            try
             {
-                if (film.FilmID == item.FilmID)
+                foreach (Film film in Cinema.Films)
                 {
-                    Cinema.Films.Remove(film);
-                    break;
+                    if (film.FilmID == item.FilmID)
+                    {
+                        Cinema.Films.Remove(film);
+                        Cinema.SaveChanges();
+                        return true;
+                    }
                 }
+
             }
-          
-            Cinema.SaveChanges();
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return false;
         }
 
-        public void UpdateItem(Film previous, Film updated)
+        public bool UpdateItem(Film previous, Film updated)
         {
-            int id = previous.FilmID;
-            updated.FilmID = id;
-            foreach (Film film in Cinema.Films)
+            try
             {
-                if (film.FilmID == previous.FilmID)
+                int id = previous.FilmID;
+                updated.FilmID = id;
+                foreach (Film film in Cinema.Films)
                 {
-                    Cinema.Films.Remove(film);
-                    break;
+                    if (film.FilmID == previous.FilmID)
+                    {
+                        Cinema.Films.Remove(film);
+                        Cinema.Films.Add(updated);
+                        Cinema.SaveChanges();
+                        return true;
+
+                    }
                 }
+
             }
-            Cinema.Films.Add(updated);
-            Cinema.SaveChanges();
+            catch
+            {
+
+                return false;
+            }
+            return false;
+            
         }
 
         public DbSet SelectItem()

@@ -97,6 +97,7 @@
     <Compile Include="TariffRepository.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="TimeTable.cs" />
+    <Compile Include="TimeTableRepository.cs" />
     <Compile Include="Viewer.cs" />
     <Compile Include="Worker.cs" />
     <Compile Include="WorkerRepository.cs" />
