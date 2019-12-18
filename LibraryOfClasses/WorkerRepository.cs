@@ -76,10 +76,11 @@ namespace LibraryOfClasses
                         worker.Salary = updated.Salary;
                         worker.Tickets = updated.Tickets;
                         worker.WorkingPosition = updated.WorkingPosition;
-                        return true;
+                        
                     }
                 }
-                return false;
+                Cinema.SaveChanges();
+                return true;
             }
             catch
             {

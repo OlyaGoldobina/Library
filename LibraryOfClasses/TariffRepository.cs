@@ -80,10 +80,11 @@ namespace LibraryOfClasses
                         tariff.Name = updated.Name;
                         tariff.Price = updated.Price;
                         tariff.Weekend = updated.Weekend;
-                        return true;
+
                     }
                 }
-                return false;
+                Cinema.SaveChanges();
+                return true;
             }
             catch
             {

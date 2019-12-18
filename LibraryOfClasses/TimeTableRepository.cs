@@ -75,16 +75,15 @@ namespace LibraryOfClasses
                         Cinema.Workers.Find(updated.WorkerID).TimeTables.Add(previous);
                         
                     }
+
+                }
                     Cinema.SaveChanges();
                     return true;
-                }
-
             }
             catch
             {
                 return false;
             }
-            return false;
 
         }
 
