@@ -11,16 +11,64 @@ namespace LibraryOfClasses
             : base("name=Model1")
         {
         }
-        public virtual bool ChangePassword(Logging logging)
-        {
-            return false;
-        }
-        public virtual bool CheckLog(Logging logging)
+        public virtual void ChangeQuestionAndAnswer(string Password, string NewQuestion, string NewAnswer)
         {
             foreach (var item in Loggings)
             {
-                if (item == logging)
+                if ((item.Login == LoginUser) && (item.Password == Password))
+                {
+                    item.SecretQuestion = NewQuestion;
+                    item.SecretAnswer = NewAnswer;
+                    SaveChanges();
+                    break;
+                }
+            }
+        }
+        public virtual void ChangePassword(string OldPassword, string NewPassword)
+        {
+            foreach (var item in Loggings)
+            {
+                if ((item.Login == LoginUser)&&( item.Password == OldPassword ))
+                {
+                    item.Password = NewPassword;
+                    SaveChanges();
+                    break;
+                }
+            }
+        }
+        public virtual string LoginUser { get; set; }
+        public virtual string ReturnQuestionOnLogin(string Login)
+        {
+            foreach (var item in Loggings)
+            {
+                if (item.Login == Login)
+                {
+                    return item.SecretQuestion;
+                }
+            }
+            return null;
+        }
+        public virtual string ReturnPasswordOnSA(string Answer, string Login)
+        {
+            foreach (var item in Loggings)
+            {
+                if ((item.SecretAnswer == Answer) && (item.Login == Login))
+                {
+                    return item.Password;
+                }
+            }
+            return null;
+        }
+        public virtual bool CheckLog(string Login, string Password)
+        {
+            foreach (var item in Loggings)
+            {
+                if ((item.Password == Password) && (item.Login == Login))
+                {
+                    LoginUser = item.Login;
                     return true;
+                }
+                    
             }
             return false;
         }
