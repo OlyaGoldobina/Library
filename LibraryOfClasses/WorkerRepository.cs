@@ -22,7 +22,15 @@ namespace LibraryOfClasses
         {
             try
             {
-                item.WorkerID = Cinema.Workers.Count() + 1;
+                int tempID = 0;
+                foreach (Worker worker in Cinema.Workers)
+                {
+                    if (worker.WorkerID > tempID)
+                    {
+                        tempID = worker.WorkerID;
+                    }
+                }
+                item.WorkerID = tempID + 1;
                 Cinema.Workers.Add(item);
                 Cinema.SaveChanges();
                 return true;

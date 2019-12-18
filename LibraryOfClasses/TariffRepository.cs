@@ -21,7 +21,15 @@ namespace LibraryOfClasses
         {
             try
             {
-                item.TariffID = Cinema.Tariffs.Count() + 1;
+                int tempID = 0;
+                foreach (Tariff tariff in Cinema.Tariffs)
+                {
+                    if (tariff.TariffID > tempID)
+                    {
+                        tempID = tariff.TariffID;
+                    }
+                }
+                item.TariffID = tempID + 1;
                 Cinema.Tariffs.Add(item);
                 Cinema.SaveChanges();
                 return true;

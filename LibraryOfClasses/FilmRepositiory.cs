@@ -21,7 +21,15 @@ namespace LibraryOfClasses
         {
             try
             {
-                item.FilmID = Cinema.Films.Count() + 1;
+                int tempID = 0;
+                foreach (Film film in Cinema.Films)
+                {
+                    if (film.FilmID > tempID)
+                    {
+                        tempID = film.FilmID;
+                    }
+                }
+                item.FilmID = tempID + 1;
                 Cinema.Films.Add(item);
                 Cinema.SaveChanges();
                 return true;
