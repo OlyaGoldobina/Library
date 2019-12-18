@@ -33,11 +33,8 @@ namespace LibraryOfClasses
                 //}
                 FilmRepositiory rep = new FilmRepositiory();
                 var Cinema = new OurCinema();
-                foreach (var item in Cinema.TimeTables)
-                {
-                    Console.WriteLine("-----");
-                    Console.WriteLine(item.Film.Name);
-                }
+                Cinema.Loggings.Add(new Logging() { Login = "123", Password = "123" });
+                Cinema.SaveChanges();
                 //var film = new Film { FilmID = 21, Name = "Samy Luchiy Film 3", Start= DateTime.Parse("2019-12-17 00:00:00.0000000"), Finish = DateTime.Parse("2019-12-17 00:00:00.0000000"), Rating = 0, CostOfMovieRental = 0};
                 ////rep.AddItem(film);
                 //var film2 = new Film { FilmID = 21, Name = "Samy Luchiy Film 3", Start = DateTime.Now, Finish = DateTime.Now, Rating = 4, CostOfMovieRental = 110000 };

@@ -8,7 +8,7 @@ namespace LibraryOfClasses
     public partial class OurCinema : DbContext
     {
         public OurCinema()
-            : base("name=Model1")
+            : base("name=Model11")
         {
         }
 
@@ -20,6 +20,7 @@ namespace LibraryOfClasses
         public virtual DbSet<TimeTable> TimeTables { get; set; }
         public virtual DbSet<Viewer> Viewers { get; set; }
         public virtual DbSet<Worker> Workers { get; set; }
+        public virtual DbSet<Logging> Loggings { get; set; }
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
