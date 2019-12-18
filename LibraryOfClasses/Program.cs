@@ -40,7 +40,7 @@ namespace LibraryOfClasses
                 //var film2 = new Film { FilmID = 21, Name = "Samy Luchiy Film 3", Start = DateTime.Now, Finish = DateTime.Now, Rating = 4, CostOfMovieRental = 110000 };
                 ////rep.RemoveItem(film);
                 //rep.UpdateItem(film, film2);
-                Console.WriteLine("Press any key to exit...");
+                Console.WriteLine("Press any key to exit....");
                 Console.ReadKey();
 
             }
