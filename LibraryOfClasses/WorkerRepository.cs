@@ -18,41 +18,64 @@ namespace LibraryOfClasses
 
         }
 
-        public void AddItem(Worker item)
+        public bool AddItem(Worker item)
         {
-            item.WorkerID = Cinema.Workers.Count() + 1;
-            Cinema.Workers.Add(item);
-            Cinema.SaveChanges();
+            try
+            {
+                item.WorkerID = Cinema.Workers.Count() + 1;
+                Cinema.Workers.Add(item);
+                Cinema.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public void RemoveItem(Worker item)
+        public bool RemoveItem(Worker item)
         {
-            foreach (Worker worker in Cinema.Workers)
+            try
             {
-                if (worker.WorkerID == item.WorkerID)
+                foreach (Worker worker in Cinema.Workers)
                 {
-                    Cinema.Workers.Remove(worker);
-                    break;
+                    if (worker.WorkerID == item.WorkerID)
+                    {
+                        Cinema.Workers.Remove(worker);
+                        Cinema.SaveChanges();
+                        return true;
+                    }
                 }
+                return false;
             }
-
-            Cinema.SaveChanges();
+            catch
+            {
+                return false;
+            }
         }
 
-        public void UpdateItem(Worker previous, Worker updated)
+        public bool UpdateItem(Worker previous, Worker updated)
         {
-            int id = previous.WorkerID;
-            updated.WorkerID = id;
-            foreach (Worker worker in Cinema.Workers)
+            try
             {
-                if (worker.WorkerID == previous.WorkerID)
+                int id = previous.WorkerID;
+                updated.WorkerID = id;
+                foreach (Worker worker in Cinema.Workers)
                 {
-                    Cinema.Workers.Remove(worker);
-                    break;
+                    if (worker.WorkerID == previous.WorkerID)
+                    {
+                        Cinema.Workers.Remove(worker);
+                        Cinema.Workers.Add(updated);
+                        Cinema.SaveChanges();
+                        return true;
+                    }
                 }
+                return false;
             }
-            Cinema.Workers.Add(updated);
-            Cinema.SaveChanges();
+            catch
+            {
+                return false;
+            }
         }
 
         public DbSet SelectItem()
