@@ -33,7 +33,7 @@ namespace LibraryOfClasses
                 //}
                 FilmRepositiory rep = new FilmRepositiory();
                 var Cinema = new OurCinema();
-                Cinema.Loggings.Add(new Logging() { Login = "123", Password = "123" });
+                Cinema.Loggings.Add(new Logging() { Login = "123", Password = "123", SecretAnswer = "Obes", SecretQuestion = "NeObes" });
                 Cinema.SaveChanges();
                 //var film = new Film { FilmID = 21, Name = "Samy Luchiy Film 3", Start= DateTime.Parse("2019-12-17 00:00:00.0000000"), Finish = DateTime.Parse("2019-12-17 00:00:00.0000000"), Rating = 0, CostOfMovieRental = 0};
                 ////rep.AddItem(film);

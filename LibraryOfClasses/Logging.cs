@@ -18,5 +18,11 @@ namespace LibraryOfClasses
         [Column(Order = 1)]
         [StringLength(100)]
         public string Password { get; set; }
+
+        [StringLength(100)]
+        public string SecretQuestion { get; set; }
+
+        [StringLength(100)]
+        public string SecretAnswer { get; set; }
     }
 }

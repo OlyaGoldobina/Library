@@ -8,10 +8,22 @@ namespace LibraryOfClasses
     public partial class OurCinema : DbContext
     {
         public OurCinema()
-            : base("name=Model11")
+            : base("name=Model1")
         {
         }
-
+        public virtual bool ChangePassword(Logging logging)
+        {
+            return false;
+        }
+        public virtual bool CheckLog(Logging logging)
+        {
+            foreach (var item in Loggings)
+            {
+                if (item == logging)
+                    return true;
+            }
+            return false;
+        }
         public virtual DbSet<Film> Films { get; set; }
         public virtual DbSet<Hall> Halls { get; set; }
         public virtual DbSet<Rated> Rateds { get; set; }
