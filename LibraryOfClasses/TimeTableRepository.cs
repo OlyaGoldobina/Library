@@ -36,16 +36,15 @@ namespace LibraryOfClasses
         {
             try
             {
+
                 Cinema.TimeTables.Remove(item);
                 Cinema.SaveChanges();
-                return false;
+                return true;
             }
             catch
             {
                 return false;
             }
-
-
 
         }
 

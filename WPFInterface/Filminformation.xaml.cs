@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryOfClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,17 @@ namespace WPFInterface
     /// </summary>
     public partial class Filminformation : Window
     {
-        public Filminformation()
+        FilmRepositiory _repo = new FilmRepositiory();
+        public Filminformation(Film films)
         {
             InitializeComponent();
+            if (films != null)
+            {
+                Name.Text = films.Name;
+                StartDate.Text = films.Start.ToString();
+                EndDate.Text = films.Finish.ToString();
+                MovieRental.Text = films.CostOfMovieRental.ToString();
+            }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

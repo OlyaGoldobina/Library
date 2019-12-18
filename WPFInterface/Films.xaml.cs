@@ -31,8 +31,8 @@ namespace WPFInterface
         private void UpdateSessions()
         {
             List<Film> thisses = _repo.SelectItem();
-            Film.ItemsSource = null;
-            Film.ItemsSource = thisses;
+            FilmItems.ItemsSource = null;
+            FilmItems.ItemsSource = thisses;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -44,17 +44,46 @@ namespace WPFInterface
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            var selectedFilm = FilmItems.SelectedItem as Film;
+            if (selectedFilm == null)
+            {
+                MessageBox.Show("Select the item");
+                return;
+            }
+            else
+            {
+                    if (_repo.RemoveItem(selectedFilm))
+                {
+                    Films filmswindow = new Films();
+                    filmswindow.Show();
+                    this.Close();
+                }
+                    else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
         }
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-
+            var selectedFilm = FilmItems.SelectedItem as Film;
+            if (selectedFilm == null)
+            {
+                MessageBox.Show("Select the item");
+                return;
+            }
+            else
+            {
+                Filminformation filmwindow = new Filminformation(selectedFilm);
+                filmwindow.Show();
+                this.Close();
+            }
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            Filminformation filmwindow = new Filminformation();
+            Filminformation filmwindow = new Filminformation(null);
             filmwindow.Show();
             this.Close();
         }

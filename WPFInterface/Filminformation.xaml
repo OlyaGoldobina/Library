@@ -34,22 +34,22 @@
         <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
             Name
         </Label>
-        <TextBox Grid.Column ="2" MinHeight="30" Grid.Row="2" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontFamily="Calibri"
+        <TextBox Grid.Column ="2" MinHeight="30" Grid.Row="2" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontSize="25" FontFamily="Calibri"
                      Margin="3,3,3,3" Padding="3" Name="Name"/>
         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
            Start date
         </Label>
-        <TextBox Name="StartDate" Grid.Column ="2" MinHeight="30" Grid.Row="3" Grid.ColumnSpan="2"
+        <TextBox Name="StartDate" Grid.Column ="2" MinHeight="30" Grid.Row="3" Grid.ColumnSpan="2"  Foreground="DarkSlateGray" FontSize="25" 
                      Margin="3,3,3,3" Padding="3" FontFamily="Calibri"/>
         <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
-            End position
+            End date
         </Label>
-        <TextBox Name="EndDate" Grid.Column ="2" MinHeight="30" Grid.Row="4" Grid.ColumnSpan="2"
+        <TextBox Name="EndDate" Grid.Column ="2" MinHeight="30" Grid.Row="4" Grid.ColumnSpan="2"  Foreground="DarkSlateGray" FontSize="25" 
                      Margin="3,3,3,3" Padding="3" FontFamily="Calibri"/>
         <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
             Movie rental price
         </Label>
-        <TextBox Name="MovieRental" Grid.Column ="2" MinHeight="30" Grid.Row="5" Grid.ColumnSpan="2"
+        <TextBox Name="MovieRental" Grid.Column ="2" MinHeight="30" Grid.Row="5" Grid.ColumnSpan="2"  Foreground="DarkSlateGray" FontSize="25" 
                      Margin="3,3,3,3" Padding="3" FontFamily="Calibri"/>
         <Button Name="ChangeFilmInformation" Grid.Column="3" Grid.Row="6" Background="Gold" Click="ChangeFilmInformation_Click"  BorderThickness="1">
             <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
