@@ -64,9 +64,10 @@ namespace LibraryOfClasses
                 {
                     if (worker.WorkerID == previous.WorkerID)
                     {
-                        Cinema.Workers.Remove(worker);
-                        Cinema.Workers.Add(updated);
-                        Cinema.SaveChanges();
+                        worker.Name = updated.Name;
+                        worker.Salary = updated.Salary;
+                        worker.Tickets = updated.Tickets;
+                        worker.WorkingPosition = updated.WorkingPosition;
                         return true;
                     }
                 }

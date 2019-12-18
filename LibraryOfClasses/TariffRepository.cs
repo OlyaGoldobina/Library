@@ -64,9 +64,14 @@ namespace LibraryOfClasses
                 {
                     if (tariff.TariffID == previous.TariffID)
                     {
-                        Cinema.Tariffs.Remove(tariff);
-                        Cinema.Tariffs.Add(updated);
-                        Cinema.SaveChanges();
+                        //Cinema.Tariffs.Remove(tariff);
+                        //Cinema.Tariffs.Add(updated);
+                        //Cinema.SaveChanges();
+                        tariff.D = updated.D;
+                        tariff.Morning = updated.Morning;
+                        tariff.Name = updated.Name;
+                        tariff.Price = updated.Price;
+                        tariff.Weekend = updated.Weekend;
                         return true;
                     }
                 }
