@@ -56,6 +56,7 @@ namespace WPFInterface
                 {
                     Films filmswindow = new Films();
                     filmswindow.Show();
+                    MessageBox.Show("The film was deleted");
                     this.Close();
                 }
                     else

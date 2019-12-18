@@ -22,17 +22,18 @@ namespace WPFInterface
     /// </summary>
     public partial class Worker : Window
     {
-        WorkerRepository _repo = new WorkerRepository();
+        WorkerRepositiory _repo = new WorkerRepositiory();
         public Worker()
         {
             InitializeComponent();
+            UpdateSessions();
         }
 
         private void UpdateSessions()
         {
-//            List<Worker> thisses = _repo.SelectItem();
-//            FilmItems.ItemsSource = null;
-//            FilmItems.ItemsSource = thisses;
+            List<LibraryOfClasses.Worker> thisses = _repo.SelectItem();
+            WorkersItem.ItemsSource = null;
+            WorkersItem.ItemsSource = thisses;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -44,17 +45,47 @@ namespace WPFInterface
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            var selectedWorker = WorkersItem.SelectedItem as LibraryOfClasses.Worker;
+            if (selectedWorker == null)
+            {
+                MessageBox.Show("Select the item");
+                return;
+            }
+            else
+            {
+                if (_repo.RemoveItem(selectedWorker))
+                {
+                    Worker filmswindow = new Worker();
+                    filmswindow.Show();
+                    MessageBox.Show("The worker was deleted");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("There is information about this worker in other tables");
+                }
+            }
         }
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-
+            var selectedWorker = WorkersItem.SelectedItem as LibraryOfClasses.Worker;
+            if (selectedWorker == null)
+            {
+                MessageBox.Show("Select the item");
+                return;
+            }
+            else
+            {
+                WorkersInformation filmwindow = new WorkersInformation(selectedWorker);
+                filmwindow.Show();
+                this.Close();
+            }
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            WorkersInformation workerwindow = new WorkersInformation();
+            WorkersInformation workerwindow = new WorkersInformation(null);
             workerwindow.Show();
             this.Close();
         }

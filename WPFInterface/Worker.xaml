@@ -28,21 +28,22 @@
                 <TextBlock HorizontalAlignment="Center"  Margin="5,0,5,0">
             <Run FontFamily="Calibri" FontSize="35" Foreground="DeepSkyBlue">Your workers:</Run>
                 </TextBlock>
-                <ScrollViewer CanContentScroll="True" Height="250">
-                    <ListBox Name="Past" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
+                <ScrollViewer CanContentScroll="True" Height="240">
+                    <ListBox Name="WorkersItem" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="Snow" BorderThickness="0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="Name: " Margin="5,0,5,0"/>
-                                    <TextBlock Text="{Binding Name}" Margin="5,0,5,0"></TextBlock>
-                                    <TextBlock Text="BirthDate: " Margin="5,0,5,0"/>
-                                    <TextBlock Text="{Binding BirthDate}" Margin="5,0,5,0"></TextBlock>
-                                    <TextBlock Text="Working Position:" Margin="5,0,5,0"/>
-                                    <TextBlock Text="{Binding WorkingPosition}" Margin="5,0,5,0"/>
-                                    <TextBlock Text="Salary:" Margin="5,0,5,0"/>
-                                    <TextBlock Text="{Binding Salary}" Margin="5,0,5,0"/>
-                                    <Line X1="5" X2="100" Stroke="DarkSlateBlue" />
-                                </StackPanel>
+                                <Border BorderBrush="DeepSkyBlue" BorderThickness="1">
+                                    <StackPanel>
+                                        <TextBlock Text="Name: " Margin="5,0,5,0"/>
+                                        <TextBlock Text="{Binding Name}" Margin="5,0,5,0" Width="500"></TextBlock>
+                                        <TextBlock Text="BirthDate: " Margin="5,0,5,0"/>
+                                        <TextBlock Text="{Binding BirthDate}" Margin="5,0,5,0"></TextBlock>
+                                        <TextBlock Text="Working Position:" Margin="5,0,5,0"/>
+                                        <TextBlock Text="{Binding WorkingPosition}" Margin="5,0,5,0"/>
+                                        <TextBlock Text="Salary:" Margin="5,0,5,0"/>
+                                        <TextBlock Text="{Binding Salary}" Margin="5,0,5,0"/>
+                                    </StackPanel>
+                                </Border>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
