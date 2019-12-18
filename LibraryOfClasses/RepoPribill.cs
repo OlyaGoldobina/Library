@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class RepoPribill
+    public class RepoPribill
     {
         OurCinema Cinema = Factory.Instance.GetOurCinema();
         public double TotalRevue()

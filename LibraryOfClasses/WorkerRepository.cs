@@ -1,4 +1,4 @@
-﻿using System;       
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    public class  WorkerRepositiory : IRepository<Worker>
+    public class WorkerRepositiory : IRepository<Worker>
     {
 
         OurCinema Cinema = Factory.Instance.GetOurCinema();
-        
+
+
         public WorkerRepositiory()
         {
 
@@ -56,7 +57,7 @@ namespace LibraryOfClasses
                 return true;
             }
             catch
-            {   
+            {
                 return false;
             }
         }

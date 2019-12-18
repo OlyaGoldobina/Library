@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryOfClasses
 {
-    class TariffRepositiory : IRepository<Tariff>
+    public class TariffRepositiory : IRepository<Tariff>
     {
 
         OurCinema Cinema = Factory.Instance.GetOurCinema();
