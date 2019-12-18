@@ -30,5 +30,22 @@ namespace WPFInterface
             choisewindow.Show();
             this.Close();
         }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            TimeTableInformation tablewindow = new TimeTableInformation();
+            tablewindow.Show();
+            this.Close();
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

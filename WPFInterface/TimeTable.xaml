@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFInterface"
         mc:Ignorable="d"
-        Title="TimaTable" Height="450" Width="800" Icon="favion.ico" Background="Gold">
-    <Grid x:Name="TableWindow" Background="DarkOrange">
+       Title="TimeTable information" Height="450" Width="800" Icon="favion.ico" Background="Gold">
+    <Grid x:Name="ShceduleWindow" Background="DarkOrange">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.14*"/>
             <RowDefinition Height="0.6*"/>
@@ -23,10 +23,10 @@
         <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center"  Grid.ColumnSpan="4">
             <Run FontFamily="Calibri" FontSize="50" Foreground="Snow">Owner's cinema App</Run>
         </TextBlock>
-        <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="0" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4">
+        <Border Background="Snow" BorderBrush="Snow" BorderThickness="0" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3">
             <StackPanel Margin="10">
                 <TextBlock HorizontalAlignment="Center"  Margin="5,0,5,0">
-            <Run FontFamily="Calibri" FontSize="35" Foreground="DeepSkyBlue">Your shcedule is:</Run>
+            <Run FontFamily="Calibri" FontSize="35" Foreground="DeepSkyBlue">Shcedule information:</Run>
                 </TextBlock>
                 <ScrollViewer CanContentScroll="True" Height="250">
                     <ListBox Name="Past" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
@@ -45,6 +45,22 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </ScrollViewer>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="4" Grid.Row="1" Background="Snow" BorderThickness="0">
+            <StackPanel Margin="0,50,0,50">
+                <Button Margin="0,10" Background="Gold" BorderThickness="0" Foreground="Snow" 
+                        FontFamily="Calibri" FontSize="25" Name="Add" Click="Add_Click">
+                    Add
+                </Button>
+                <Button Margin="0,10" Background="Gold" BorderThickness="0" Foreground="Snow"
+                        FontFamily="Calibri" FontSize="25" Name="Update" Click="Update_Click">
+                    Undate
+                </Button>
+                <Button Margin="0,10" Background="Gold" BorderThickness="0" Foreground="Snow" FontFamily="Calibri" FontSize="25" Name="Delete"
+                        Click="Delete_Click">
+                    Delete
+                </Button>
             </StackPanel>
         </Border>
         <Button Name="Back" Grid.Column="4" Grid.Row="7" Background="Gold" Click="Back_Click"  BorderThickness="0">

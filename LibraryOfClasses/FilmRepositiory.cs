@@ -9,7 +9,6 @@ namespace LibraryOfClasses
 {
     class FilmRepositiory : IRepository<Film>
     {
-        public List<Film> Films { get; set;} = new List<Film>();
 
         OurCinema Cinema =  Factory.Instance.GetOurCinema();
 
