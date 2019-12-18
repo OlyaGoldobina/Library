@@ -18,11 +18,11 @@ namespace WPFInterface
     /// <summary>
     /// Логика взаимодействия для Filminformation.xaml
     /// </summary>
-    public partial class Filminformation : Window
+    public partial class TariffIformation : Window
     {
         FilmRepositiory _repo = new FilmRepositiory();
         public Film Filming { get;set;}
-        public Filminformation(Film films)
+        public TariffIformation(Film films)
         {
             InitializeComponent();
             if (films != null)

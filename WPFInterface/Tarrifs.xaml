@@ -28,21 +28,24 @@
                 <TextBlock HorizontalAlignment="Center"  Margin="5,0,5,0">
             <Run FontFamily="Calibri" FontSize="35" Foreground="DeepSkyBlue">Tariffs information:</Run>
                 </TextBlock>
-                <ScrollViewer CanContentScroll="True" Height="250">
-                    <ListBox Name="Past" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
+                <ScrollViewer CanContentScroll="True" Height="240">
+                    <ListBox Name="TarrifItems" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel>
+                                <Border BorderBrush="DeepSkyBlue" BorderThickness="1">
+                                    <StackPanel>
                                     <TextBlock Text="Price: " Margin="5,0,5,0"/>
                                     <TextBlock Text="{Binding Price}" Margin="5,0,5,0"></TextBlock>
                                     <TextBlock Text="Format: " Margin="5,0,5,0"/>
                                     <TextBlock Text="{Binding D}" Margin="5,0,5,0"></TextBlock>
-                                    <TextBlock Text="Weekend?" Margin="5,0,5,0"/>
+                                    <TextBlock Text="Weekend" Margin="5,0,5,0"/>
                                     <TextBlock Text="{Binding Weekend}" Margin="5,0,5,0"/>
                                     <TextBlock Text="Morning:" Margin="5,0,5,0"/>
                                     <TextBlock Text="{Binding Morning}" Margin="5,0,5,0"/>
-                                    <Line X1="5" X2="100" Stroke="DarkSlateBlue" />
-                                </StackPanel>
+                                    <TextBlock Text="Name: " Margin="5,0,5,0"/>
+                                    <TextBlock Text="{Binding Name}" Margin="5,0,5,0" Width="500"></TextBlock>
+                                    </StackPanel>
+                                </Border>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>

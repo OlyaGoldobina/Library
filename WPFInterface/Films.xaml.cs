@@ -76,7 +76,7 @@ namespace WPFInterface
             }
             else
             {
-                Filminformation filmwindow = new Filminformation(selectedFilm);
+                TariffIformation filmwindow = new TariffIformation(selectedFilm);
                 filmwindow.Show();
                 this.Close();
             }
@@ -84,7 +84,7 @@ namespace WPFInterface
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            Filminformation filmwindow = new Filminformation(null);
+            TariffIformation filmwindow = new TariffIformation(null);
             filmwindow.Show();
             this.Close();
         }
