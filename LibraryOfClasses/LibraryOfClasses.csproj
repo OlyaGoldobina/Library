@@ -76,7 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="database_firewall_rules.cs" />
+    <Compile Include="Factory.cs" />
     <Compile Include="Film.cs" />
+    <Compile Include="FilmRepositiory.cs" />
     <Compile Include="Hall.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Entity.cs" />
