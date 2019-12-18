@@ -83,6 +83,7 @@
     <Compile Include="IEntity.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Logging.cs" />
     <Compile Include="OurCinema.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +93,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Rated.cs" />
+    <Compile Include="RepoPribill.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Tariff.cs" />
     <Compile Include="TariffRepository.cs" />
