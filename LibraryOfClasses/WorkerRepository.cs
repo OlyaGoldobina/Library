@@ -22,7 +22,15 @@ namespace LibraryOfClasses
         {
             try
             {
-                item.WorkerID = Cinema.Workers.Count() + 1;
+                int tempID = 0;
+                foreach (Worker worker in Cinema.Workers)
+                {
+                    if (worker.WorkerID > tempID)
+                    {
+                        tempID = worker.WorkerID;
+                    }
+                }
+                item.WorkerID = tempID + 1;
                 Cinema.Workers.Add(item);
                 Cinema.SaveChanges();
                 return true;
@@ -42,11 +50,11 @@ namespace LibraryOfClasses
                     if (worker.WorkerID == item.WorkerID)
                     {
                         Cinema.Workers.Remove(worker);
-                        Cinema.SaveChanges();
-                        return true;
+                        
                     }
                 }
-                return false;
+                Cinema.SaveChanges();
+                return true;
             }
             catch
             {
@@ -68,10 +76,11 @@ namespace LibraryOfClasses
                         worker.Salary = updated.Salary;
                         worker.Tickets = updated.Tickets;
                         worker.WorkingPosition = updated.WorkingPosition;
-                        return true;
+                        
                     }
                 }
-                return false;
+                Cinema.SaveChanges();
+                return true;
             }
             catch
             {

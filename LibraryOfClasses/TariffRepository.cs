@@ -21,7 +21,15 @@ namespace LibraryOfClasses
         {
             try
             {
-                item.TariffID = Cinema.Tariffs.Count() + 1;
+                int tempID = 0;
+                foreach (Tariff tariff in Cinema.Tariffs)
+                {
+                    if (tariff.TariffID > tempID)
+                    {
+                        tempID = tariff.TariffID;
+                    }
+                }
+                item.TariffID = tempID + 1;
                 Cinema.Tariffs.Add(item);
                 Cinema.SaveChanges();
                 return true;
@@ -41,11 +49,11 @@ namespace LibraryOfClasses
                     if (tariff.TariffID == item.TariffID)
                     {
                         Cinema.Tariffs.Remove(tariff);
-                        Cinema.SaveChanges();
-                        return true;
+                        
                     }
                 }
-                return false;
+                Cinema.SaveChanges();
+                return true;
             }
             catch
             {
@@ -72,10 +80,11 @@ namespace LibraryOfClasses
                         tariff.Name = updated.Name;
                         tariff.Price = updated.Price;
                         tariff.Weekend = updated.Weekend;
-                        return true;
+
                     }
                 }
-                return false;
+                Cinema.SaveChanges();
+                return true;
             }
             catch
             {

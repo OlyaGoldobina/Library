@@ -73,17 +73,17 @@ namespace LibraryOfClasses
                         Cinema.Halls.Find(updated.HallID).TimeTables.Add(previous);
 
                         Cinema.Workers.Find(updated.WorkerID).TimeTables.Add(previous);
-                        Cinema.SaveChanges();
-                        return true;
+                        
                     }
-                }
 
+                }
+                    Cinema.SaveChanges();
+                    return true;
             }
             catch
             {
                 return false;
             }
-            return false;
 
         }
 

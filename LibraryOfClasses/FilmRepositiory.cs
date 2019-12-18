@@ -21,7 +21,15 @@ namespace LibraryOfClasses
         {
             try
             {
-                item.FilmID = Cinema.Films.Count() + 1;
+                int tempID = 0;
+                foreach (Film film in Cinema.Films)
+                {
+                    if (film.FilmID > tempID)
+                    {
+                        tempID = film.FilmID;
+                    }
+                }
+                item.FilmID = tempID + 1;
                 Cinema.Films.Add(item);
                 Cinema.SaveChanges();
                 return true;
@@ -36,7 +44,6 @@ namespace LibraryOfClasses
 
         public bool RemoveItem(Film item)
         {
-            bool indicator = false;
             try
             {
                 foreach (Film film in Cinema.Films)
@@ -44,17 +51,19 @@ namespace LibraryOfClasses
                     if (film.FilmID == item.FilmID)
                     {
                         Cinema.Films.Remove(film);
+                      
+                        
                     }
                 }
                 Cinema.SaveChanges();
-                indicator = true;
-                return indicator;
+                return true;
             }
-            catch
+            catch (Exception)
             {
 
-                return indicator;
-            }
+                return false;
+           }
+            
         }
 
         public bool UpdateItem(Film previous, Film updated)
@@ -73,17 +82,20 @@ namespace LibraryOfClasses
                         film.Start = updated.Start;
                         film.Name = updated.Name;
                         film.Rating = updated.Rating;
-                        return true;
+                        
 
                     }
+                    Cinema.SaveChanges();
+                    return true;
                 }
-                return false;
 
             }
             catch
             {
+
                 return false;
             }
+            return false;
             
         }
 
