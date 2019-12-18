@@ -31,7 +31,9 @@ namespace WPFInterface
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            Worker workerwindow = new Worker();
+            workerwindow.Show();
+            this.Close();
         }
     }
 }

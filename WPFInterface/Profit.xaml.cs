@@ -26,7 +26,9 @@ namespace WPFInterface
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            Choise choisewindow = new Choise();
+            choisewindow.Show();
+            this.Close();
         }
     }
 }

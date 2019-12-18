@@ -26,7 +26,9 @@ namespace WPFInterface
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            Choise choisewindow = new Choise();
+            choisewindow.Show();
+            this.Close();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -41,7 +43,9 @@ namespace WPFInterface
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-
+            WorkersInformation workerwindow = new WorkersInformation();
+            workerwindow.Show();
+            this.Close();
         }
     }
 }

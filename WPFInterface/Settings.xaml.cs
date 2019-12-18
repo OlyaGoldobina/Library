@@ -31,12 +31,21 @@ namespace WPFInterface
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
         }
 
         private void ChangeQuestionButton_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            Choise choisewindow = new Choise();
+            choisewindow.Show();
+            this.Close();
         }
     }
 }

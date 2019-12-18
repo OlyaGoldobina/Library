@@ -26,7 +26,9 @@ namespace WPFInterface
 
         private void ForgetPas_Click(object sender, RoutedEventArgs e)
         {
-
+            Question questionwindow = new Question();
+            questionwindow.Show();
+            this.Close();
         }
 
         private void EnterTheApp_Click(object sender, RoutedEventArgs e)

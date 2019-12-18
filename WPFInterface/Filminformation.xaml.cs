@@ -26,7 +26,9 @@ namespace WPFInterface
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            Films filmswindow = new Films();
+            filmswindow.Show();
+            this.Close();
         }
 
         private void ChangeFilmInformation_Click(object sender, RoutedEventArgs e)

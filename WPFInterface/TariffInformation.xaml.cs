@@ -26,7 +26,9 @@ namespace WPFInterface
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            Tarrifs tariffwindow = new Tarrifs();
+            tariffwindow.Show();
+            this.Close();
         }
 
 

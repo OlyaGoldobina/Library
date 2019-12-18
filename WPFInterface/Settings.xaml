@@ -72,8 +72,11 @@
         <Button Name="ChangeQuestionButton" Grid.Column="3" Grid.Row="8" Background="Gold" Click="ChangeQuestionButton_Click"  BorderThickness="0">
             <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
         </Button>
-        <Button Name="Logout" Grid.Column="4" Background="Tomato" Click="Logout_Click"  BorderThickness="0" Margin="10,20">
+        <Button Name="Logout" Grid.Column="4" Background="Tomato" Click="Logout_Click"  BorderThickness="0" Margin="0,20">
             <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Logout</Run>
+        </Button>
+        <Button Name="Back" Grid.Column="4" Grid.Row="8" Background="Tomato" Click="Back_Click"  BorderThickness="0" >
+            <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Back</Run>
         </Button>
     </Grid>
 </Window>
