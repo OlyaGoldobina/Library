@@ -53,8 +53,8 @@ namespace WPFInterface
             {
                 if (_repo.RemoveItem(selectedTariff))
                 {
-                    Tarrifs filmswindow = new Tarrifs();
-                    filmswindow.Show();
+                    Tarrifs tariffwindow = new Tarrifs();
+                    tariffwindow.Show();
                     MessageBox.Show("The tariff was deleted");
                     this.Close();
                 }
@@ -75,8 +75,8 @@ namespace WPFInterface
             }
             else
             {
-                TariffInformation filmwindow = new TariffInformation(selectedTariff);
-                filmwindow.Show();
+                TariffInformation tariffwindow = new TariffInformation(selectedTariff);
+                tariffwindow.Show();
                 this.Close();
             }
         }

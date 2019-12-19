@@ -28,19 +28,20 @@
                 <TextBlock HorizontalAlignment="Center"  Margin="5,0,5,0">
             <Run FontFamily="Calibri" FontSize="35" Foreground="DeepSkyBlue">Shcedule information:</Run>
                 </TextBlock>
-                <ScrollViewer CanContentScroll="True" Height="250">
-                    <ListBox Name="Past" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
+                <ScrollViewer CanContentScroll="True" Height="240">
+                    <ListBox Name="ShceduleItems" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel>
+                                <Border BorderBrush="DeepSkyBlue" BorderThickness="1">
+                                    <StackPanel>
                                     <TextBlock Text="Start time: " Margin="5,0,5,0"/>
-                                    <TextBlock Text="{Binding DateTime}" Margin="5,0,5,0"></TextBlock>
+                                    <TextBlock Text="{Binding DateTime}" Margin="5,0,5,0" Width="500"></TextBlock>
                                     <TextBlock Text="Hall: " Margin="5,0,5,0"/>
-                                    <TextBlock Text="{Binding HallName}" Margin="5,0,5,0"></TextBlock>
+                                    <TextBlock Text="{Binding Hall.HallName}" Margin="5,0,5,0"></TextBlock>
                                     <TextBlock Text="Film:" Margin="5,0,5,0"/>
-                                    <TextBlock Text="{Binding Name}" Margin="5,0,5,0"/>
-                                    <Line X1="5" X2="100" Stroke="DarkSlateBlue" />
+                                    <TextBlock Text="{Binding Film.Name}" Margin="5,0,5,0"/>
                                 </StackPanel>
+                                </Border>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>

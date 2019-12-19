@@ -34,18 +34,18 @@
         <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
             Start time
         </Label>
-        <TextBox Grid.Column ="2" MinHeight="30" Grid.Row="2" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontFamily="Calibri"
-                     Margin="3,3,3,3" Padding="3" Name="Name"/>
+        <TextBox Grid.Column ="2" MinHeight="30" Grid.Row="2" Grid.ColumnSpan="2" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri"
+                     Margin="3,3,3,3" Padding="3" Name="Start"/>
         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
             Hall name
         </Label>
-        <TextBox Name="StartDate" Grid.Column ="2" MinHeight="30" Grid.Row="3" Grid.ColumnSpan="2"
-                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri"/>
+        <TextBox Name="HallName" Grid.Column ="2" MinHeight="30" Grid.Row="3" Grid.ColumnSpan="2"
+                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri" FontSize="20" Foreground="DarkSlateGray"/>
         <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
             Film name
         </Label>
-        <TextBox Name="EndDate" Grid.Column ="2" MinHeight="30" Grid.Row="4" Grid.ColumnSpan="2"
-                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri"/>
+        <TextBox Name="FilmName" Grid.Column ="2" MinHeight="30" Grid.Row="4" Grid.ColumnSpan="2"
+                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri" FontSize="20" Foreground="DarkSlateGray"/>
         <Button Name="ChangeFilmInformation" Grid.Column="3" Grid.Row="5" Background="Gold" Click="ChangeFilmInformation_Click"  BorderThickness="0">
             <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
         </Button>
