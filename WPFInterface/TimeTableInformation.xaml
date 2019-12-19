@@ -46,7 +46,12 @@
         </Label>
         <TextBox Name="FilmName" Grid.Column ="2" MinHeight="30" Grid.Row="4" Grid.ColumnSpan="2"
                      Margin="3,3,3,3" Padding="3" FontFamily="Calibri" FontSize="20" Foreground="DarkSlateGray"/>
-        <Button Name="ChangeFilmInformation" Grid.Column="3" Grid.Row="5" Background="Gold" Click="ChangeFilmInformation_Click"  BorderThickness="0">
+        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
+            Worker name
+        </Label>
+        <TextBox Name="WorkerName" Grid.Column ="2" MinHeight="30" Grid.Row="5" Grid.ColumnSpan="2"
+                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri" FontSize="20" Foreground="DarkSlateGray"/>
+        <Button Name="ChangeFilmInformation" Grid.Column="3" Grid.Row="6" Background="Gold" Click="ChangeFilmInformation_Click"  BorderThickness="0">
             <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
         </Button>
         <Button Name="Back" Grid.Column="3" Grid.Row="7" Background="Gold" Click="Back_Click"  BorderThickness="0">

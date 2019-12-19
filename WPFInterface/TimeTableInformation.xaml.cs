@@ -30,6 +30,7 @@ namespace WPFInterface
                 Start.Text = thetable.Datetime.ToString();
                 HallName.Text = thetable.Hall.HallName;
                 FilmName.Text = thetable.Film.Name;
+                WorkerName.Text = thetable.Worker.Name;
             }
             Tabling = thetable;
         }
@@ -46,101 +47,130 @@ namespace WPFInterface
             DateTime start;
             string hall;
             string film;
+            string worker;
             if (Tabling == null)
             {
                 if (DateTime.TryParse(Start.Text, out start))
                 {
-                    if (HallName.Text != null)
+                    if (HallName.Text != "")
                     {
                         hall = HallName.Text;
-                        if (Morning.IsChecked != null)
+                        if (FilmName.Text != "")
                         {
-                            morning = Morning.IsChecked.Value;
-                            if (Weekend.IsChecked != null)
+                            film = FilmName.Text;
+                            if(WorkerName.Text != "")
                             {
-                                weekend = Weekend.IsChecked.Value;
-                                if (Name.Text != null)
+                                worker = WorkerName.Text;
+                                var Filming = _repo.GetFilm(film);
+                                if (Filming != null)
                                 {
-                                    name = Name.Text;
-                                    Tariff tariff = new Tariff
+                                    var Halling = _repo.GetHall(hall);
+                                    if (hall != null)
                                     {
-                                        D = d,
-                                        Price = price,
-                                        Morning = morning,
-                                        Weekend = weekend,
-                                        Name = name
-                                    };
-                                    _repo.AddItem(tariff);
-                                    Tarrifs filmswindow = new Tarrifs();
-                                    filmswindow.Show();
-                                    MessageBox.Show("The tariff was added");
-                                    this.Close();
+                                        var Working = _repo.GetWorker(worker);
+                                        if(Working != null)
+                                        {
+                                            LibraryOfClasses.TimeTable timeTable = new LibraryOfClasses.TimeTable
+                                            {
+                                                Datetime = start,
+                                                Film = Filming,
+                                                FilmID = Filming.FilmID,
+                                                Hall = Halling,
+                                                HallID = Halling.HallID,
+                                                Worker = Working,
+                                                WorkerID = Working.WorkerID
+                                            };
+                                            _repo.AddItem(timeTable);
+                                            TimeTable tablewindow = new TimeTable();
+                                            tablewindow.Show();
+                                            MessageBox.Show("The line was added");
+                                            this.Close();
+                                        }
+                                        else
+                                            MessageBox.Show("There is no worker with this name");
+                                    }
+                                    else
+                                        MessageBox.Show("There is no hall with this name");
                                 }
                                 else
-                                    MessageBox.Show("Enter the name");
+                                    MessageBox.Show("There in no film with this name");
                             }
                             else
-                                MessageBox.Show("Choose the option for weekend");
-                        }
-                        else
-                            MessageBox.Show("Choose the option for morning");
+                                MessageBox.Show("Enter the worker");
+                                }
+                                else
+                                    MessageBox.Show("Enter the film");
+                            }
+                            else
+                                MessageBox.Show("Enter the hall");
                     }
                     else
-                        MessageBox.Show("Price should the written with comma");
-                }
-                else
-                    MessageBox.Show("Enter the format in int");
+                        MessageBox.Show("Enter the date in the fillowing format YYYY-MM-DD HH:MM:SS");
             }
             else
             {
-                if (int.TryParse(Name.Text, out d))
+                if (DateTime.TryParse(Start.Text, out start))
                 {
-                    if (double.TryParse(Price.Text, out price))
+                    if (HallName.Text != "")
                     {
-                        if (Morning.IsChecked != null)
+                        hall = HallName.Text;
+                        if (FilmName.Text != "")
                         {
-                            morning = Morning.IsChecked.Value;
-                            if (Weekend.IsChecked != null)
+                            film = FilmName.Text;
+                            if (WorkerName.Text != "")
                             {
-                                weekend = Weekend.IsChecked.Value;
-                                if (Name.Text != null)
+                                worker = WorkerName.Text;
+                                var Filming = _repo.GetFilm(film);
+                                if (Filming != null)
                                 {
-                                    name = Name.Text;
-                                    if (!(name == Tariffing.Name & d == Tariffing.D & price == Tariffing.Price & morning == Tariffing.Morning & weekend == Tariffing.Weekend))
+                                    var Halling = _repo.GetHall(hall);
+                                    if (hall != null)
                                     {
-                                        Tariff tariff = new Tariff
+                                        var Working = _repo.GetWorker(worker);
+                                        if (Working != null)
                                         {
-                                            D = d,
-                                            Price = price,
-                                            Morning = morning,
-                                            Weekend = weekend,
-                                            Name = name
-                                        };
-                                        _repo.UpdateItem(Tariffing, tariff);
-                                        Tarrifs filmswindow = new Tarrifs();
-                                        filmswindow.Show();
-                                        MessageBox.Show("The tariff was changed");
-                                        this.Close();
+                                            if(!(Working.WorkerID == Tabling.WorkerID & Filming.FilmID == Tabling.FilmID & Halling.HallID == Tabling.HallID & start == Tabling.Datetime))
+                                            {
+                                                LibraryOfClasses.TimeTable timeTable = new LibraryOfClasses.TimeTable
+                                                {
+                                                    Datetime = start,
+                                                    Film = Filming,
+                                                    FilmID = Filming.FilmID,
+                                                    Hall = Halling,
+                                                    HallID = Halling.HallID,
+                                                    Worker = Working,
+                                                    WorkerID = Working.WorkerID
+                                                };
+                                                _repo.UpdateItem(Tabling, timeTable);
+                                                TimeTable tablewindow = new TimeTable();
+                                                tablewindow.Show();
+                                                MessageBox.Show("The line was added");
+                                                this.Close();
+                                            }
+                                            else
+                                                MessageBox.Show("You haven't changed anything");
+                                        }
+                                        else
+                                            MessageBox.Show("There is no worker with this name");
                                     }
                                     else
-                                        MessageBox.Show("You haven't changed anything");
+                                        MessageBox.Show("There is no hall with this name");
                                 }
                                 else
-                                    MessageBox.Show("Enter the name");
+                                    MessageBox.Show("There in no film with this name");
                             }
                             else
-                                MessageBox.Show("Choose the option for weekend");
+                                MessageBox.Show("Enter the worker");
                         }
                         else
-                            MessageBox.Show("Choose the option for morning");
+                            MessageBox.Show("Enter the film");
                     }
                     else
-                        MessageBox.Show("Price should the written with comma");
+                        MessageBox.Show("Enter the hall");
                 }
                 else
-                    MessageBox.Show("Enter the format in int");
+                    MessageBox.Show("Enter the date in the fillowing format YYYY-MM-DD HH:MM:SS");
             }
-        }
     }
     }
 }

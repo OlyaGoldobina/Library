@@ -97,5 +97,37 @@ namespace LibraryOfClasses
             timetable.Sort((x, y) => x.HallID.CompareTo(y.HallID));
             return timetable;
         }
+
+        public Film GetFilm(string name)
+        {
+            foreach(var film in Cinema.Films)
+            {
+                if(film.Name == name)
+                    return film;
+            }
+            return null;
+        }
+
+        public Hall GetHall(string name)
+        {
+            foreach(var hall in Cinema.Halls)
+            {
+                if(hall.HallName == name)
+                    return hall;
+            }
+            return null;
+        }
+
+        public Worker GetWorker(string name)
+        {
+            foreach(var worker in Cinema.Workers)
+            {
+                if(worker.Name == name)
+                {
+                    return worker;
+                }
+            }
+            return null;
+        }
     }
 }

@@ -40,7 +40,9 @@
                                     <TextBlock Text="{Binding Hall.HallName}" Margin="5,0,5,0"></TextBlock>
                                     <TextBlock Text="Film:" Margin="5,0,5,0"/>
                                     <TextBlock Text="{Binding Film.Name}" Margin="5,0,5,0"/>
-                                </StackPanel>
+                                        <TextBlock Text="Worker:" Margin="5,0,5,0"/>
+                                        <TextBlock Text="{Binding Worker.Name}" Margin="5,0,5,0"/>
+                                    </StackPanel>
                                 </Border>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
