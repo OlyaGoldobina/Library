@@ -28,23 +28,23 @@
                 <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0">
             <Run FontFamily="Calibri" FontSize="25" Foreground="DarkSlateGray">Revenue:</Run>
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="TR"/>
+                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="TR"  Foreground="DarkSlateGray"/>
                 <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0">
             <Run FontFamily="Calibri" FontSize="25" Foreground="DarkSlateGray">Variable costs:</Run>
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="VC"/>
+                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="VC"  Foreground="DarkSlateGray"/>
                 <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0">
             <Run FontFamily="Calibri" FontSize="25" Foreground="DarkSlateGray">Fixed costs:</Run>
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="FC"/>
+                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="FC"  Foreground="DarkSlateGray"/>
                 <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0">
             <Run FontFamily="Calibri" FontSize="25" Foreground="DarkSlateGray">Total costs:</Run>
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="TC"/>
+                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="TC"  Foreground="DarkSlateGray"/>
                 <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0">
             <Run FontFamily="Calibri" FontSize="25" Foreground="DarkSlateGray">Total profit:</Run>
                 </TextBlock>
-                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="P"/>
+                <TextBlock HorizontalAlignment="Left"  Margin="5,0,5,0" Name="P"  Foreground="DarkSlateGray"/>
             </StackPanel>
         </Border>
         <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Grid.ColumnSpan="4">

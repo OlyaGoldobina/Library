@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LibraryOfClasses;
 
 namespace WPFInterface
 {
@@ -19,9 +20,25 @@ namespace WPFInterface
     /// </summary>
     public partial class Profit : Window
     {
+        public RepoPribill _repo = new RepoPribill();
         public Profit()
         {
             InitializeComponent();
+            UpdateData();
+        }
+
+        public void UpdateData()
+        {
+            var totalrevenue = _repo.TotalRevue();
+            TR.Text = totalrevenue.ToString();
+            var vc = _repo.VariableCost();
+            VC.Text = vc.ToString();
+            var fc = _repo.FixCost();
+            FC.Text = fc.ToString();
+            var tc = _repo.TotalCost();
+            TC.Text = tc.ToString();
+            var prof = _repo.TotalProfit();
+            P.Text = prof.ToString();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
