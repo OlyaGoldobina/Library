@@ -54,25 +54,25 @@ namespace LibraryOfClasses
             {
                 foreach (TimeTable timeTable in Cinema.TimeTables)
                 {
-                    if ((timeTable.FilmID == previous.FilmID) && (timeTable.HallID == previous.HallID) && (timeTable.Datetime == previous.Datetime))
+                    if ((timeTable.FilmID == previous.FilmID) & (timeTable.HallID == previous.HallID) & (timeTable.Datetime == previous.Datetime))
                     {
-                        Cinema.Films.Find(previous.FilmID).TimeTables.Remove(previous);
-                        Cinema.Halls.Find(previous.HallID).TimeTables.Remove(previous);
-                        Cinema.Workers.Find(previous.WorkerID).TimeTables.Remove(previous);
+                        //Cinema.Films.Find(previous.FilmID).TimeTables.Remove(previous);
+                        //Cinema.Halls.Find(previous.HallID).TimeTables.Remove(previous);
+                        //Cinema.Workers.Find(previous.WorkerID).TimeTables.Remove(previous);
                         timeTable.Datetime = updated.Datetime;
-                        timeTable.Film = Cinema.Films.Find(updated.FilmID);
+                        timeTable.Film = updated.Film;
 
                         timeTable.FilmID = updated.FilmID;
-                        timeTable.Hall = Cinema.Halls.Find(updated.HallID);
+                        timeTable.Hall = updated.Hall;
                         timeTable.HallID = updated.HallID;
-                        timeTable.Worker = Cinema.Workers.Find(updated.WorkerID);
+                        timeTable.Worker = updated.Worker;
                         timeTable.WorkerID = updated.WorkerID;
 
-                        Cinema.Films.Find(updated.FilmID).TimeTables.Add(previous);
+                        //Cinema.Films.Find(updated.FilmID).TimeTables.Add(previous);
 
-                        Cinema.Halls.Find(updated.HallID).TimeTables.Add(previous);
+                        //Cinema.Halls.Find(updated.HallID).TimeTables.Add(previous);
 
-                        Cinema.Workers.Find(updated.WorkerID).TimeTables.Add(previous);
+                        //Cinema.Workers.Find(updated.WorkerID).TimeTables.Add(previous);
                         
                     }
 

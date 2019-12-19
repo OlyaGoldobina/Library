@@ -60,7 +60,7 @@
                 </Button>
                 <Button Margin="0,10" Background="Gold" BorderThickness="0" Foreground="Snow"
                         FontFamily="Calibri" FontSize="25" Name="Update" Click="Update_Click">
-                    Undate
+                    Update
                 </Button>
                 <Button Margin="0,10" Background="Gold" BorderThickness="0" Foreground="Snow" FontFamily="Calibri" FontSize="25" Name="Delete"
                         Click="Delete_Click">

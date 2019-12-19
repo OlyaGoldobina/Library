@@ -144,7 +144,7 @@ namespace WPFInterface
                                                 _repo.UpdateItem(Tabling, timeTable);
                                                 TimeTable tablewindow = new TimeTable();
                                                 tablewindow.Show();
-                                                MessageBox.Show("The line was added");
+                                                MessageBox.Show("The line was changed");
                                                 this.Close();
                                             }
                                             else
