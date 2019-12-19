@@ -33,12 +33,12 @@
             Login
         </Label>
         <TextBox Grid.Column ="2" MinHeight="30" Grid.Row="2" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontFamily="Calibri"
-                     Margin="3,3,3,3" Padding="3" Name="EnterLogin"/>
+                     Margin="3,3,3,3" Padding="3" Name="EnterLogin" FontSize="20"/>
         <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
             Password
         </Label>
         <PasswordBox Name="EnterPassword" Grid.Column ="2" MinHeight="30" Grid.Row="3" Grid.ColumnSpan="2"
-                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri"/>
+                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri" Foreground="DarkSlateGray" />
         <Button Name="EnterTheApp" Grid.Column="3" Grid.Row="5" Background="Gold" Click="EnterTheApp_Click"  BorderThickness="0">
             <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
         </Button>

@@ -23,7 +23,8 @@ namespace LibraryOfClasses
                     break;
                 }
             }
-        }
+        }  
+
         public virtual void ChangePassword(string OldPassword, string NewPassword)
         {
             foreach (var item in Loggings)
@@ -36,6 +37,7 @@ namespace LibraryOfClasses
                 }
             }
         }
+
         public virtual string LoginUser { get; set; }
         public virtual string ReturnQuestionOnLogin(string Login)
         {
@@ -48,6 +50,7 @@ namespace LibraryOfClasses
             }
             return null;
         }
+
         public virtual string ReturnPasswordOnSA(string Answer, string Login)
         {
             foreach (var item in Loggings)
@@ -59,6 +62,7 @@ namespace LibraryOfClasses
             }
             return null;
         }
+
         public virtual bool CheckLog(string Login, string Password)
         {
             foreach (var item in Loggings)
@@ -68,7 +72,6 @@ namespace LibraryOfClasses
                     LoginUser = item.Login;
                     return true;
                 }
-                    
             }
             return false;
         }

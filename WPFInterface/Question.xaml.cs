@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LibraryOfClasses;
 
 namespace WPFInterface
 {
@@ -19,6 +20,7 @@ namespace WPFInterface
     /// </summary>
     public partial class Question : Window
     {
+        public OurCinema user = new OurCinema();
         public Question()
         {
             InitializeComponent();
@@ -33,7 +35,19 @@ namespace WPFInterface
 
         private void ChangePassword_Click(object sender, RoutedEventArgs e)
         {
-
+            string answer = TheAnswer.Text;
+            string login = user.LoginUser;
+            if(login != "")
+            {
+                if(answer != "")
+                {
+//                    if(user.)
+                }
+                else
+                    MessageBox.Show("Enter the answer");
+            }
+            else
+                MessageBox.Show("Enter the login");
         }
     }
 }
