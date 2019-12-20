@@ -14,7 +14,11 @@ namespace LibraryOfClasses
             double Revue = new double();
             foreach (var item in Cinema.Tickets)
             {
-                Revue += item.Tariff.Price;
+                if ((item.TimeofBuyng.Month == DateTime.Now.Month) && (item.TimeofBuyng.Year == DateTime.Now.Year))
+                {
+                    Revue += item.Tariff.Price;
+                }
+
             }
             return Revue;
         }
