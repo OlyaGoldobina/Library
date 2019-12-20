@@ -12,11 +12,11 @@ namespace LibraryOfClasses
             : base("name=Model1")
         {
         }
-        public virtual void ChangeQuestionAndAnswer(string Password, string NewQuestion, string NewAnswer)
+        public virtual void ChangeQuestionAndAnswer(string NewQuestion, string NewAnswer)
         {
             foreach (var item in Loggings)
             {
-                if ((item.Login == LoginUser) && (item.Password == Password))
+                if ((item.Login == LoginUser))
                 {
                     item.SecretQuestion = NewQuestion;
                     item.SecretAnswer = NewAnswer;
@@ -26,7 +26,7 @@ namespace LibraryOfClasses
             }
         }  
 
-        public virtual void ChangePassword(string OldPassword, string NewPassword)
+        public virtual bool ChangePassword(string OldPassword, string NewPassword)
         {
             foreach (var item in Loggings)
             {
@@ -34,9 +34,10 @@ namespace LibraryOfClasses
                 {
                     item.Password = NewPassword;
                     SaveChanges();
-                    break;
+                    return true;
                 }
             }
+            return false;
         }
 
         public virtual void ChangePasswordByLogin(string login, string newpassword)
@@ -65,7 +66,7 @@ namespace LibraryOfClasses
             return null;
         }
 
-        public static List<string> ListOfQuest = new List<string>() {"What is your mother second name","What is your first pet name?","What is your favorite food?" };
+        public List<string> ListOfQuest = new List<string>() {"What is your mother second name","What is your first pet name?","What is your favorite food?" };
         public virtual bool ReturnPasswordOnSA(string Answer, string Login)
         {
             foreach (var item in Loggings)

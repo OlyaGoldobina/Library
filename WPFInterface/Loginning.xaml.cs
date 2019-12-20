@@ -20,7 +20,7 @@ namespace WPFInterface
     /// </summary>
     public partial class Loginning : Window
     {
-        public OurCinema user = new OurCinema();
+        public OurCinema user = Factory.Instance.GetOurCinema();
         public Loginning()
         {
             InitializeComponent();

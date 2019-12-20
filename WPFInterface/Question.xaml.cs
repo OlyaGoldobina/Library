@@ -20,7 +20,7 @@ namespace WPFInterface
     /// </summary>
     public partial class Question : Window
     {
-        public OurCinema user = new OurCinema();
+        public OurCinema user = Factory.Instance.GetOurCinema();
         public string UserLogin { get;set;}
         public Question(string login)
         {

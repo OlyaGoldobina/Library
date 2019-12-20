@@ -26,10 +26,10 @@ namespace WPFInterface
 
         private void Choose_Click(object sender, RoutedEventArgs e)
         {
-            string selectedOption = Options.SelectedItem .ToString();
-            if(selectedOption != "")
+            if (Options.SelectedItem != null)
             {
-                if(selectedOption == "System.Windows.Controls.ListBoxItem: Settings")
+                string selectedOption = Options.SelectedItem.ToString();
+                if (selectedOption == "System.Windows.Controls.ListBoxItem: Settings")
                 {
                     Settings settingswindow = new Settings();
                     settingswindow.Show();
