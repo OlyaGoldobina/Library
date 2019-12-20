@@ -11,41 +11,29 @@ namespace LibraryOfClasses
         OurCinema Cinema = Factory.Instance.GetOurCinema();
         public double TotalRevue()
         {
-            double Revue = new double();
-            foreach (var item in Cinema.Tickets)
-            {
-                if ((item.TimeofBuyng.Month == DateTime.Now.Month) && (item.TimeofBuyng.Year == DateTime.Now.Year))
-                {
-                    Revue += item.Tariff.Price;
-                }
+                var blogNames = Cinema.Database.SqlQuery<double>(
+                                   "select sum(Tar.Price) from [dbo].[Ticket] as T join [dbo].[Tariff] as Tar on T.TariffID = Tar.TariffID where MONTH(T.TimeofBuyng) = Month(SYSDATETIME()) and Year(T.TimeofBuyng) = Year(SYSDATETIME())").ToList();
 
-            }
-            return Revue;
+            return blogNames[0];
+
         }
         public double VariableCost()
         {
             double VC = new double();
-            foreach (var item in Cinema.Workers)
-            {
-                VC += item.Salary;
-            }
-            foreach (var item in Cinema.Films)
-            {
-                if ((item.Start.Month == DateTime.Now.Month) && (item.Start.Year == DateTime.Now.Year))
-                {
-                    VC += item.CostOfMovieRental;
-                }
+            VC += Cinema.Database.SqlQuery<double>(
+                                    "select sum(Salary) from  [dbo].[Worker]").ToList()[0];
 
-            }
+            VC += Cinema.Database.SqlQuery<double>(
+                                   "select sum(CostOfMovieRental) from [dbo].[Film] where MONTH(Start) = Month(SYSDATETIME()) and Year(Start) = Year(SYSDATETIME())").ToList()[0];
+
             return VC;
         }
         public double FixCost()
         {
             double FC = new double();
-            foreach (var item in Cinema.Halls)
-            {
-                FC += item.Cost;
-            }
+            FC += Cinema.Database.SqlQuery<double>(
+                                    "select sum(Cost) from[dbo].[Halls]").ToList()[0];
+ 
             return FC;
         }
         public double TotalCost() => FixCost() + VariableCost();
