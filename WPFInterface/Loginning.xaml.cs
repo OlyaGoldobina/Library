@@ -16,37 +16,32 @@ using LibraryOfClasses;
 namespace WPFInterface
 {
     /// <summary>
-    /// Логика взаимодействия для ChangePassword.xaml
+    /// Логика взаимодействия для Loginning.xaml
     /// </summary>
-    public partial class ChangePassword : Window
+    public partial class Loginning : Window
     {
         public OurCinema user = new OurCinema();
-        public string UserLogin { get;set;}
-        public ChangePassword(string login)
+        public Loginning()
         {
             InitializeComponent();
-            UserLogin = login;
         }
 
-        private void ChangeThePassword_Click(object sender, RoutedEventArgs e)
+        private void Question_Click(object sender, RoutedEventArgs e)
         {
-            string newpassword = EnterNewPassword.Text;
-            string repeat = RepeatNewPassword.Text;
-            if (newpassword != "" && repeat != "")
+            var login = TheLogin.Text;
+            if(login != "")
             {
-                if(newpassword == repeat)
+                if(user.CheckLogin(login))
                 {
-                    user.ChangePasswordByLogin(UserLogin,newpassword);
-                    MainWindow mainwindow = new MainWindow();
-                    mainwindow.Show();
-                    MessageBox.Show("The password was changed");
+                    Question questionwindow = new Question(login);
+                    questionwindow.Show();
                     this.Close();
                 }
                 else
-                    MessageBox.Show("The passwords do not match");
+                    MessageBox.Show("There is no user with this login");
             }
             else
-                MessageBox.Show("Enter the password");
+                MessageBox.Show("Enter the login");
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

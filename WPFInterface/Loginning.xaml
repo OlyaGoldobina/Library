@@ -1,12 +1,12 @@
-﻿<Window x:Class="WPFInterface.Question"
+﻿<Window x:Class="WPFInterface.Loginning"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFInterface"
         mc:Ignorable="d"
-        Title="InsightGuestion" Height="450" Width="800" Icon="favion.ico" Background="Gold">
-    <Grid x:Name="QuestionWindow" Background="DarkOrange">
+        Title="LoginWindow" Height="450" Width="800" Icon="favion.ico" Background="Gold">
+    <Grid x:Name="LoginWindow" Background="DarkOrange">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.5*"/>
@@ -29,14 +29,12 @@
         </TextBlock>
         <TextBlock Name="ErrorBlock" Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Left" Margin="5,0,5,0" FontFamily="Calibri"  FontSize="25" Foreground="LightCoral">
         </TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Foreground="Snow" FontSize="30" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
-            Answer the question:
+        <TextBlock Name="NewQuestion" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Foreground="Snow" FontSize="30" HorizontalAlignment="Left" FontFamily="Calibri"  Grid.RowSpan="3">
+            Enter the login
         </TextBlock>
-        <TextBlock Name="NewQuestion" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Foreground="Snow" FontSize="30" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
-        </TextBlock>
-        <TextBox Name="TheAnswer" Grid.Column ="1" MinHeight="30" Grid.Row="4" Grid.ColumnSpan="3"
+        <TextBox Name="TheLogin" Grid.Column ="1" MinHeight="30" Grid.Row="4" Grid.ColumnSpan="3"
                      Margin="3,3,3,3" Padding="3" FontFamily="Calibri" FontSize="20" Foreground="DarkSlateGray" />
-        <Button Name="ChangePassword" Grid.Column="3" Grid.Row="6" Background="Gold" BorderThickness="0" Click="ChangePassword_Click">
+        <Button Name="Question" Grid.Column="3" Grid.Row="6" Background="Gold" BorderThickness="0" Click="Question_Click">
             <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
         </Button>
         <Button Name="Back" Grid.Column="1" Grid.Row="6" Background="Gold" BorderThickness="0" Click="Back_Click">

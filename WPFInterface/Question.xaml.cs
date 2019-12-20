@@ -21,9 +21,12 @@ namespace WPFInterface
     public partial class Question : Window
     {
         public OurCinema user = new OurCinema();
-        public Question()
+        public string UserLogin { get;set;}
+        public Question(string login)
         {
             InitializeComponent();
+            NewQuestion.Text = user.ReturnQuestionOnLogin(login);
+            UserLogin = login;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -36,18 +39,19 @@ namespace WPFInterface
         private void ChangePassword_Click(object sender, RoutedEventArgs e)
         {
             string answer = TheAnswer.Text;
-            string login = user.LoginUser;
-            if(login != "")
-            {
                 if(answer != "")
                 {
-//                    if(user.)
+                    if(user.ReturnPasswordOnSA(answer,UserLogin))
+                {
+                    ChangePassword changewindow = new ChangePassword(UserLogin);
+                    changewindow.Show();
+                    this.Close();
+                }
+                    else
+                    MessageBox.Show("Wrong answer");
                 }
                 else
                     MessageBox.Show("Enter the answer");
-            }
-            else
-                MessageBox.Show("Enter the login");
         }
     }
 }

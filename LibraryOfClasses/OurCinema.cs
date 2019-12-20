@@ -39,6 +39,19 @@ namespace LibraryOfClasses
             }
         }
 
+        public virtual void ChangePasswordByLogin(string login, string newpassword)
+        {
+            foreach (var item in Loggings)
+            {
+                if ((item.Login == login))
+                {
+                    item.Password = newpassword;
+                    SaveChanges();
+                    break;
+                }
+            }
+        }
+
         public virtual string LoginUser { get; set; }
         public virtual string ReturnQuestionOnLogin(string Login)
         {
@@ -51,6 +64,7 @@ namespace LibraryOfClasses
             }
             return null;
         }
+
         public static List<string> ListOfQuest = new List<string>() {"What is your mother second name","What is your first pet name?","What is your favorite food?" };
         public virtual bool ReturnPasswordOnSA(string Answer, string Login)
         {
@@ -76,6 +90,19 @@ namespace LibraryOfClasses
             }
             return false;
         }
+
+        public virtual bool CheckLogin(string Login)
+        {
+            foreach(var item in Loggings)
+            {
+                if(item.Login == Login)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public virtual DbSet<Film> Films { get; set; }
         public virtual DbSet<Hall> Halls { get; set; }
         public virtual DbSet<Rated> Rateds { get; set; }

@@ -77,6 +77,9 @@
     <Compile Include="Films.xaml.cs">
       <DependentUpon>Films.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Loginning.xaml.cs">
+      <DependentUpon>Loginning.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -124,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Films.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Loginning.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

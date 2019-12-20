@@ -28,8 +28,8 @@ namespace WPFInterface
 
         private void ForgetPas_Click(object sender, RoutedEventArgs e)
         {
-            Question questionwindow = new Question();
-            questionwindow.Show();
+            Loginning loginwindow = new Loginning();
+            loginwindow.Show();
             this.Close();
         }
 
