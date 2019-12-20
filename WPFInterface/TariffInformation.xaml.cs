@@ -97,7 +97,7 @@ namespace WPFInterface
             }
             else
             {
-                if (int.TryParse(Name.Text, out d))
+                if (int.TryParse(Format.Text, out d))
                 {
                     if (double.TryParse(Price.Text, out price))
                     {
