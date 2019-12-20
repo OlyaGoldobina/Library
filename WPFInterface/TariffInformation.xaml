@@ -44,11 +44,11 @@
         <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
             Weekend
         </Label>
-        <CheckBox x:Name="Weekend" IsThreeState="True" IsChecked="False" Height="20" Grid.Column="2" Grid.Row="4"/>
+        <CheckBox x:Name="Weekend" IsChecked="{x:Null}" IsThreeState="True"  Height="20" Grid.Column="2" Grid.Row="4"/>
             <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
             Morning
         </Label>
-        <CheckBox x:Name="Morning" IsThreeState="True" IsChecked="False" Height="20" Grid.Column="2" Grid.Row="5"/>
+        <CheckBox x:Name="Morning" IsChecked="{x:Null}" IsThreeState="True"  Height="20" Grid.Column="2" Grid.Row="5"/>
         <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri">
             Name
         </Label>

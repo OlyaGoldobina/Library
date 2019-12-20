@@ -31,7 +31,7 @@
         <TextBlock  Grid.Row="1" Grid.ColumnSpan="5" HorizontalAlignment="Left" Margin="5,0,5,0" FontFamily="Calibri"  FontSize="30" Foreground="Snow">
        Film's information:
         </TextBlock>
-        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="20" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
             Name
         </Label>
         <TextBox Grid.Column ="2" MinHeight="30" Grid.Row="2" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontSize="20" FontFamily="Calibri"
