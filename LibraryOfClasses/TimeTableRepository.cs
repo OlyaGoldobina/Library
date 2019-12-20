@@ -94,7 +94,6 @@ namespace LibraryOfClasses
             foreach (TimeTable item in dbSet)
                 timetable.Add(item);
             timetable.Sort((x, y) => x.Datetime.CompareTo(y.Datetime));
-            timetable.Sort((x, y) => x.HallID.CompareTo(y.HallID));
             return timetable;
         }
 
