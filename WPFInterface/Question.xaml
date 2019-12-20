@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFInterface"
         mc:Ignorable="d"
-        Title="InsightGuestion" Height="450" Width="800" Icon="favion.ico" Background="Gold">
+        Title="Insight question" Height="450" Width="800" Icon="favion.ico" Background="Gold">
     <Grid x:Name="QuestionWindow" Background="DarkOrange">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -35,7 +35,7 @@
         <TextBlock Name="NewQuestion" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Foreground="Snow" FontSize="30" HorizontalAlignment="Left" FontFamily="Calibri"  Margin="0,43,0,43" Grid.RowSpan="3">
         </TextBlock>
         <TextBox Name="TheAnswer" Grid.Column ="1" MinHeight="30" Grid.Row="4" Grid.ColumnSpan="3"
-                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri" FontSize="20" Foreground="DarkSlateGray" />
+                     Margin="3,3,3,3" Padding="3" FontFamily="Calibri" FontSize="20" Foreground="DarkSlateGray"/>
         <Button Name="ChangePassword" Grid.Column="3" Grid.Row="6" Background="Gold" BorderThickness="0" Click="ChangePassword_Click">
             <Run FontSize="25" Foreground="Snow" FontFamily="Calibri">Enter</Run>
         </Button>
