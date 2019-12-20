@@ -66,7 +66,7 @@ namespace LibraryOfClasses
             return null;
         }
 
-        public List<string> ListOfQuest = new List<string>() {"What is your mother second name","What is your first pet name?","What is your favorite food?" };
+        public List<string> ListOfQuest = new List<string>() {"What is your mother second name?","What is your first pet name?","What is your favorite food?" };
         public virtual bool ReturnPasswordOnSA(string Answer, string Login)
         {
             foreach (var item in Loggings)

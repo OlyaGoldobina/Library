@@ -51,18 +51,18 @@
             Choose
         </Label>
         <ComboBox Grid.Column ="2" MinHeight="30" Grid.Row="6" Grid.ColumnSpan="2" Foreground="DarkSlateGray" FontFamily="Calibri"
-                     Margin="3,3,3,3" Padding="3" Name="ChangeQuestion" Background="Snow" FontSize="25">
-            <ComboBox.ItemTemplate>
+                     Margin="3,3,3,3" Padding="3" Name="ChangeQuestion" Background="Snow" FontSize="25" ItemsSource="{Binding}">
+            <!--<ComboBox.ItemTemplate>
                 <DataTemplate>
                     <ListBox Name="Questions" HorizontalAlignment="Left" FontSize="20" Foreground="DarkSlateGray" FontFamily="Calibri" Background="GhostWhite" BorderThickness="0">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Text}" Margin="5,0,5,0"></TextBlock>
+                                <TextBlock Text="{Binding Path=.}" Margin="5,0,5,0"></TextBlock>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
                 </DataTemplate>
-            </ComboBox.ItemTemplate>
+            </ComboBox.ItemTemplate>-->
         </ComboBox>
         <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Snow" FontSize="25" HorizontalAlignment="Left" FontFamily="Calibri" Grid.RowSpan="3">
             Answer
