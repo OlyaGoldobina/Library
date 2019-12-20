@@ -14,43 +14,48 @@ namespace LibraryOfClasses
         }
         public virtual void ChangeQuestionAndAnswer(string NewQuestion, string NewAnswer)
         {
+
             foreach (var item in Loggings)
             {
                 if ((item.Login == LoginUser))
                 {
                     item.SecretQuestion = NewQuestion;
                     item.SecretAnswer = NewAnswer;
-                    SaveChanges();
+                    
                     break;
                 }
             }
-        }  
+            SaveChanges();
+        }
 
         public virtual bool ChangePassword(string OldPassword, string NewPassword)
         {
+            bool t = false;
             foreach (var item in Loggings)
             {
-                if ((item.Login == LoginUser)&&( item.Password == OldPassword ))
+                if ((item.Login == LoginUser) && (item.Password == OldPassword))
                 {
                     item.Password = NewPassword;
-                    SaveChanges();
-                    return true;
+
+                    t = true;
                 }
             }
-            return false;
+            SaveChanges();
+            return t;
         }
 
         public virtual void ChangePasswordByLogin(string login, string newpassword)
         {
+
             foreach (var item in Loggings)
             {
                 if ((item.Login == login))
                 {
                     item.Password = newpassword;
-                    SaveChanges();
-                    break;
+
                 }
             }
+            SaveChanges();
         }
 
         public virtual string LoginUser { get; set; }
@@ -66,7 +71,7 @@ namespace LibraryOfClasses
             return null;
         }
 
-        public List<string> ListOfQuest = new List<string>() {"What is your mother second name?","What is your first pet name?","What is your favorite food?" };
+        public List<string> ListOfQuest = new List<string>() { "What is your mother second name?", "What is your first pet name?", "What is your favorite food?" };
         public virtual bool ReturnPasswordOnSA(string Answer, string Login)
         {
             foreach (var item in Loggings)
@@ -94,25 +99,24 @@ namespace LibraryOfClasses
 
         public virtual bool CheckLogin(string Login)
         {
-            foreach(var item in Loggings)
+            foreach (var item in Loggings)
             {
-                if(item.Login == Login)
+                if (item.Login == Login)
                 {
                     return true;
                 }
             }
             return false;
         }
-
         public virtual DbSet<Film> Films { get; set; }
         public virtual DbSet<Hall> Halls { get; set; }
+        public virtual DbSet<Logging> Loggings { get; set; }
         public virtual DbSet<Rated> Rateds { get; set; }
         public virtual DbSet<Tariff> Tariffs { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<TimeTable> TimeTables { get; set; }
         public virtual DbSet<Viewer> Viewers { get; set; }
         public virtual DbSet<Worker> Workers { get; set; }
-        public virtual DbSet<Logging> Loggings { get; set; }
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

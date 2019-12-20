@@ -9,13 +9,11 @@ namespace LibraryOfClasses
     [Table("Logging")]
     public partial class Logging
     {
-        [Key]
-        [Column(Order = 0)]
+        [Required]
         [StringLength(100)]
         public string Login { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(100)]
         public string Password { get; set; }
 
@@ -24,5 +22,9 @@ namespace LibraryOfClasses
 
         [StringLength(100)]
         public string SecretAnswer { get; set; }
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int LoginID { get; set; }
     }
 }
