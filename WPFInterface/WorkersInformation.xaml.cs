@@ -49,7 +49,7 @@ namespace WPFInterface
                         name = Name.Text;
                         if (DateTime.TryParse(BirthDate.Text, out birthday))
                         {
-                            if (WorkingPosition.Text != null)
+                            if (WorkingPosition.Text != "")
                             {
                                 position = WorkingPosition.Text;
                                 if (double.TryParse(Salary.Text, out salary))
@@ -86,7 +86,7 @@ namespace WPFInterface
                         name = Name.Text;
                         if (DateTime.TryParse(BirthDate.Text, out birthday))
                         {
-                            if (WorkingPosition.Text != null)
+                            if (WorkingPosition.Text != "")
                             {
                                 position = WorkingPosition.Text;
                                 if (double.TryParse(Salary.Text, out salary))
