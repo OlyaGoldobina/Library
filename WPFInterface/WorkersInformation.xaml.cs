@@ -44,14 +44,14 @@ namespace WPFInterface
                 double salary;
                 if (Working == null)
                 {
-                    if (Name.Text != "")
+                    if (Name.Text.Trim() != "")
                     {
-                        name = Name.Text;
+                        name = Name.Text.Trim();
                         if (DateTime.TryParse(BirthDate.Text, out birthday))
                         {
-                            if (WorkingPosition.Text != "")
+                            if (WorkingPosition.Text.Trim() != "")
                             {
-                                position = WorkingPosition.Text;
+                                position = WorkingPosition.Text.Trim();
                                 if (double.TryParse(Salary.Text, out salary))
                                 {
                                     LibraryOfClasses.Worker workers = new LibraryOfClasses.Worker
@@ -81,14 +81,14 @@ namespace WPFInterface
                 }
                 else
                 {
-                    if (Name.Text != "")
+                    if (Name.Text.Trim() != "")
                     {
-                        name = Name.Text;
+                        name = Name.Text.Trim();
                         if (DateTime.TryParse(BirthDate.Text, out birthday))
                         {
-                            if (WorkingPosition.Text != "")
+                            if (WorkingPosition.Text.Trim() != "")
                             {
-                                position = WorkingPosition.Text;
+                                position = WorkingPosition.Text.Trim();
                                 if (double.TryParse(Salary.Text, out salary))
                                 {
                                     if(!(name == Working.Name & salary == Working.Salary & birthday == Working.BirthDate & position == Working.WorkingPosition))

@@ -63,9 +63,9 @@ namespace WPFInterface
                             if (Weekend.IsChecked != null)
                             {
                                 weekend = Weekend.IsChecked.Value;
-                                if(Name.Text != "")
+                                if(Name.Text.Trim() != "")
                                 {
-                                    name = Name.Text;
+                                    name = Name.Text.Trim();
                                     Tariff tariff = new Tariff
                                     {
                                         D = d,
@@ -107,9 +107,9 @@ namespace WPFInterface
                             if (Weekend.IsChecked != null)
                             {
                                 weekend = Weekend.IsChecked.Value;
-                                if(Name.Text != "")
+                                if(Name.Text.Trim() != "")
                                 {
-                                    name = Name.Text;
+                                    name = Name.Text.Trim();
                                     if (!(name == Tariffing.Name & d == Tariffing.D & price == Tariffing.Price & morning == Tariffing.Morning & weekend == Tariffing.Weekend))
                                     {
                                         Tariff tariff = new Tariff

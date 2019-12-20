@@ -51,9 +51,9 @@ namespace WPFInterface
             float cost;
             if (Filming == null)
             {
-                if(Name.Text != "")
+                if(Name.Text.Trim() != "")
                 {
-                    name = Name.Text;
+                    name = Name.Text.Trim();
                     if (DateTime.TryParse(StartDate.Text,out start))
                     {
                         if(DateTime.TryParse(EndDate.Text, out end))
@@ -87,9 +87,9 @@ namespace WPFInterface
             }
             else
             {
-                if (Name.Text != "")
+                if (Name.Text.Trim() != "")
                 {
-                    name = Name.Text;
+                    name = Name.Text.Trim();
                     if (DateTime.TryParse(StartDate.Text, out start))
                     {
                         if (DateTime.TryParse(EndDate.Text, out end))

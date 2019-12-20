@@ -52,15 +52,15 @@ namespace WPFInterface
             {
                 if (DateTime.TryParse(Start.Text, out start))
                 {
-                    if (HallName.Text != "")
+                    if (HallName.Text.Trim() != "")
                     {
-                        hall = HallName.Text;
-                        if (FilmName.Text != "")
+                        hall = HallName.Text.Trim();
+                        if (FilmName.Text.Trim() != "")
                         {
-                            film = FilmName.Text;
-                            if(WorkerName.Text != "")
+                            film = FilmName.Text.Trim();
+                            if(WorkerName.Text.Trim() != "")
                             {
-                                worker = WorkerName.Text;
+                                worker = WorkerName.Text.Trim();
                                 var Filming = _repo.GetFilm(film);
                                 if (Filming != null)
                                 {
@@ -111,15 +111,15 @@ namespace WPFInterface
             {
                 if (DateTime.TryParse(Start.Text, out start))
                 {
-                    if (HallName.Text != "")
+                    if (HallName.Text.Trim() != "")
                     {
-                        hall = HallName.Text;
-                        if (FilmName.Text != "")
+                        hall = HallName.Text.Trim();
+                        if (FilmName.Text.Trim() != "")
                         {
-                            film = FilmName.Text;
-                            if (WorkerName.Text != "")
+                            film = FilmName.Text.Trim();
+                            if (WorkerName.Text.Trim() != "")
                             {
-                                worker = WorkerName.Text;
+                                worker = WorkerName.Text.Trim();
                                 var Filming = _repo.GetFilm(film);
                                 if (Filming != null)
                                 {
