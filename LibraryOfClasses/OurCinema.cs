@@ -4,6 +4,7 @@ namespace LibraryOfClasses
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using System.Collections.Generic;
 
     public partial class OurCinema : DbContext
     {
@@ -50,17 +51,17 @@ namespace LibraryOfClasses
             }
             return null;
         }
-
-        public virtual string ReturnPasswordOnSA(string Answer, string Login)
+        public static List<string> ListOfQuest = new List<string>() {"What is your mother second name","What is your first pet name?","What is your favorite food?" };
+        public virtual bool ReturnPasswordOnSA(string Answer, string Login)
         {
             foreach (var item in Loggings)
             {
                 if ((item.SecretAnswer == Answer) && (item.Login == Login))
                 {
-                    return item.Password;
+                    return true;
                 }
             }
-            return null;
+            return false;
         }
 
         public virtual bool CheckLog(string Login, string Password)
