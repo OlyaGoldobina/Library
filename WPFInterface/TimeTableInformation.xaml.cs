@@ -65,7 +65,7 @@ namespace WPFInterface
                                 if (Filming != null)
                                 {
                                     var Halling = _repo.GetHall(hall);
-                                    if (hall != null)
+                                    if (Halling != null)
                                     {
                                         var Working = _repo.GetWorker(worker);
                                         if(Working != null)
